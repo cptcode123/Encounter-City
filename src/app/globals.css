@@ -1,21 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f9fafb;
   --foreground: #171717;
+
+  /* Primary Brand Colors */
+  --nav:#171717;
+  --primary: #9966cc;
+  --primary-dark: #7b4fa5;
+  --secondary: #6d83b5;
+  --secondary-dark: #4A5E89;
+
+  /* Neutrals */
+  --bg: #F9FAFB;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+
+  /* Accents */
+  --accent: #d4af37;
+  --accent-light: #f5e6a9;
+
+  /* Special Sections */
+  --verse-bg: #fbf8ff;
+  --news-bg: #f3f4f6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-nav: var(--nav);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-verse-bg: var(--verse-bg);
+  --color-news-bg: var(--news-bg);
+
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark Mode */
+@media (prefers-color-scheme: dark) { 
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #121212; /* Background Color */
+    --foreground: #f9fafb; /* Basic Text Color */
+  }
+
+  @theme inline {
+
+    /* Background */
+    --color-surface: #1e1e1e;
+    --color-border: #2a2a2a;
+
+    /* Brand  */
+    --color-primary: #9966cc;
+    --color-primary-dark: #b892e5;
+    --color-secondary: #6D83B5;
+    --color-secondary-dark: #93A7D9;
+
+
+    /* Accent */
+    --color-accent: #FFD76B;        /* Brighter gold */
+    --color-accent-light: #FDE68A;
+
+    /* Special Sections */
+    --color-verse-bg: #1A1525;      /* Subtle deep purple tint */
+    --color-news-bg: #1C1C1C;
   }
 }
 
