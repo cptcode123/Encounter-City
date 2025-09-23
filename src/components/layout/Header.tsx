@@ -18,7 +18,7 @@ const Header = () => {
 
       {/* Nav Links */}
       <nav className="hidden lg:flex gap-7 items-center shrink text-nowrap">
-        <Link href="/about" className="hover:text-secondary-dark">New Here?</Link>
+        <Link href="/about" className="hover:text-secondary-dark">About Us</Link>
         <DropdownLink 
         title="Our Ministries"
         links={[
@@ -28,8 +28,6 @@ const Header = () => {
           ]}
         />
         <Link href="/" className="hover:text-secondary-dark">Blog</Link>
-        <Link href="/" className="hover:text-secondary-dark">Gallery</Link>
-
       </nav>
 
       {/* CTA Button */}
@@ -53,8 +51,8 @@ const Header = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1}}
                 exit={{ opacity: 0}}
-                className="lg:hidden bg-surface text-primary flex flex-col gap-5 px-6 py-4 absolute top-15 left-0 right-0 z-10">
-                <Link href="/about" className="hover:text-secondary-dark">New Here?</Link>
+                className="lg:hidden bg-surface text-primary flex flex-col gap-5 px-6 py-4 absolute top-15 left-0 right-0 z-20">
+                <Link href="/about" className="hover:text-secondary-dark">About Us</Link>
                 <DropdownLink 
                 title="Our Ministries"
                 links={[
@@ -64,8 +62,6 @@ const Header = () => {
                 ]}
                 />
                 <Link href="/" className="hover:text-secondary-dark">Blog</Link>
-                <Link href="/" className="hover:text-secondary-dark">Gallery</Link>
-
                 </motion.nav>
             )}
         </AnimatePresence>        

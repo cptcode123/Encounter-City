@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({ text, inverted = false, onClick }) => {
       whileClick={{scale:0.95}}
       onClick={onClick}
       className={`
-        px-6 py-2 rounded-xl font-medium transition-colors duration-300 shadow-sm shadow-secondary text-nowrap
+        px-6 py-2 rounded-sm font-medium transition-colors duration-300 shadow-sm shadow-secondary text-nowrap
         ${inverted
           ? "bg-primary text-white hover:bg-primary-dark"
           : "bg-white text-primary hover:bg-primary-dark hover:text-white"}

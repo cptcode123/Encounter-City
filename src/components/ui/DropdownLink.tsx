@@ -40,7 +40,7 @@ const DropdownLink: React.FC<DropdownLinkProps> = ({ title, links }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -5 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-0 mt-2 min-w-max rounded-lg bg-white text-gray-800 shadow-lg border border-gray-200"
+            className="absolute left-0 mt-2 min-w-max rounded-lg bg-white text-gray-800 shadow-lg border border-gray-200 z-20"
           >
             <ul>
               {links.map((link) => (
