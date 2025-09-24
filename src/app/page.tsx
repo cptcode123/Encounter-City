@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <HeroCarousel />
       <div className="w-[80%]">
-
+        {/*  */}
       </div>
     </>
   );

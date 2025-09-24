@@ -10,14 +10,14 @@ const Header = () => {
     const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <header className="w-full bg-surface text-primary px-6 py-4 flex justify-between items-center shadow-md">
+    <header className="w-full bg-primary/80 text-text px-6 py-4 flex justify-between items-center z-20">
       {/* Logo */}
       <Link href="/" className="text-xl font-bold text-wrap">
         The Encounter City Christian Centre
       </Link>
 
       {/* Nav Links */}
-      <nav className="hidden lg:flex gap-7 items-center shrink text-nowrap">
+      <nav className="hidden lg:flex gap-7 items-center shrink text-nowrap ">
         <Link href="/about" className="hover:text-secondary-dark">About Us</Link>
         <DropdownLink 
         title="Our Ministries"
@@ -62,6 +62,7 @@ const Header = () => {
                 ]}
                 />
                 <Link href="/" className="hover:text-secondary-dark">Blog</Link>
+                <Link href="/contact" className="hover:text-secondary-dark">Get in touch</Link>
                 </motion.nav>
             )}
         </AnimatePresence>        

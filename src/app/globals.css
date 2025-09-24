@@ -6,6 +6,7 @@
 
   /* Primary Brand Colors */
   --nav:#171717;
+
   --primary: #9966cc;
   --primary-dark: #7b4fa5;
   --secondary: #6d83b5;
@@ -28,18 +29,24 @@
 }
 
 @theme inline {
+
   --color-nav: var(--nav);
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
+
   --color-secondary: var(--secondary);
   --color-secondary-dark: var(--secondary-dark);
+
   --color-bg: var(--bg);
-  --color-surface: var(--surface);
+  --color-surface: var(--surface) ;
   --color-border: var(--border);
+
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
+  
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
+
   --color-verse-bg: var(--verse-bg);
   --color-news-bg: var(--news-bg);
 
@@ -50,13 +57,17 @@
   :root {
     --background: #121212; /* Background Color */
     --foreground: #f9fafb; /* Basic Text Color */
+
+    --surface: #1e1e1e;
   }
 
   @theme inline {
 
     /* Background */
-    --color-surface: #1e1e1e;
+    --color-bg: var(--background);
+    --color-surface: var(--surface);
     --color-border: #2a2a2a;
+    --color-text: var(--foreground)
 
     /* Brand  */
     --color-primary: #9966cc;

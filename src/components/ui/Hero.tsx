@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, delay } from "framer-motion";
 import Button from "@/components/ui/Button"; // adjust path to your Button
 
 export default function HeroCarousel() {
@@ -8,18 +8,18 @@ export default function HeroCarousel() {
     {
       title: "Welcome to The Encounter City Christian Center",
       subtitle: "Where lives are transformed in Christ’s presence.",
-      image: "/public/images/slide1.jpg",
+      image: "/images/slide1.jpeg"
     },
     {
       title: "Worship. Word. Encounter.",
       subtitle: "Join us in vibrant worship and deep teaching.",
-      image: "/public/images/slide2.jpg",
+      image: "/images/slide2.jpeg",
     },
     {
       title: "A Family in Christ",
       subtitle: "Experience love, growth, and community.",
-      image: "/public/images/slide3.jpg",
-    },
+      image: "/images/slide3.jpeg",
+    }
   ];
 
   const [current, setCurrent] = useState(0);
@@ -27,7 +27,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -47,8 +47,8 @@ export default function HeroCarousel() {
       </AnimatePresence>
 
       {/* Purple Glow Overlay */}
-      <div className="absolute inset-0 bg-primary mix-blend-multiply z-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-amethyst-900/60 via-primary to-black/70 z-0" />
+      {/* <div className="absolute inset-0 bg-primary opacity-70 mix-blend-multiply z-0" /> */}
+      <div className="absolute inset-0 bg-primary/80" />
 
       {/* Content */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6">
@@ -56,7 +56,7 @@ export default function HeroCarousel() {
           key={slides[current].title}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2, delay: 1.0 }}
           className="text-4xl md:text-6xl font-bold text-white"
         >
           {slides[current].title}
@@ -66,20 +66,24 @@ export default function HeroCarousel() {
           key={slides[current].subtitle}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
           className="mt-4 text-lg md:text-2xl text-gray-200 max-w-2xl"
         >
           {slides[current].subtitle}
         </motion.p>
 
         {/* CTA Buttons (reusable component) */}
-        {/* <div className="mt-8 flex gap-4">
+        <div className="mt-8 flex gap-4">
           <Button text="Watch Live" inverted onClick={() => window.open("https://www.youtube.com/@theencountercity", "_blank")} />
-          <Button text="Become a Member"  />
+          <Button text="Become a Member" onClick={() => window.open('/member')} />
 
-        </div> */}
+        </div>
       </div>
     </section>
   );
+}
+
+export function HeroStatic() {
+
 }
 
