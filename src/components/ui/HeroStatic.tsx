@@ -11,7 +11,7 @@ interface HeroStaticProps {
 
 const HeroStatic = ({ img, title, subtitle, side }: HeroStaticProps) => {
   return (
-            <section className="relative w-full z-0">
+            <section className="relative w-full z-0 h-[10%]">
                 {/* Background Image */}
                 <div className="absolute inset-0 -z-10">
                     <img src={img} alt="Contact Hero Background" className="w-full h-full object-cover"   />
@@ -23,9 +23,9 @@ const HeroStatic = ({ img, title, subtitle, side }: HeroStaticProps) => {
                 {/* Content */}
                 <div className={`relative px-10 py-16  items-center w-full h-[700px] text-white z-10 ${ side ? 'grid md:grid-cols-2 gap-10' : 'flex items-center justify-center'}`}>
                     {/* Text */}
-                    <div className="order-2 md:order-1">
-                        <h1 className="text-5xl font-extrabold leading-tight mb-4 text-secondart">{title}</h1>
-                    {subtitle && <p className="text-lg-muted mb-15 text-wrap">
+                    <div className="order-2 md:order-1 text-center">
+                        <h1 className="text-5xl font-extrabold leading-tight mb-4 text-wrap w-200">{title}</h1>
+                    {subtitle && <p className="text-xl text-muted mb-15 text-wrap font-bold">
                         {subtitle}
                     </p>}
                     </div>

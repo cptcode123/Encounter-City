@@ -11,7 +11,7 @@ export default function ContactPage() {
     return (
         <div className="min-h-screen bg-bg text-text ">
             {/* Hero Section */}
-            <HeroStatic img="/contact-hero.jpeg" title="Get in Touch with Us" subtitle="Whether you have a question, prayer request, or want to visit, we're here for you" side />
+            <HeroStatic img="/rect-img-1.jpg" title="Get in Touch with Us" subtitle="Whether you have a question, prayer request, or want to visit, we're here for you" side />
             {/* Contact Info + Form */}
             <section className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto px-6 py-12">
 

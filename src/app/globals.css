@@ -14,7 +14,7 @@
 
   /* Neutrals */
   --bg: #F9FAFB;
-  --surface: #ffffff;
+  --surface: #F0EBE3;
   --border: #e5e7eb;
   --text: #1f2937;
   --text-muted: #6b7280;
@@ -52,39 +52,6 @@
 
 }
 
-/* Dark Mode */
-@media (prefers-color-scheme: dark) { 
-  :root {
-    --background: #121212; /* Background Color */
-    --foreground: #f9fafb; /* Basic Text Color */
-
-    --surface: #1e1e1e;
-  }
-
-  @theme inline {
-
-    /* Background */
-    --color-bg: var(--background);
-    --color-surface: var(--surface);
-    --color-border: #2a2a2a;
-    --color-text: var(--foreground)
-
-    /* Brand  */
-    --color-primary: #9966cc;
-    --color-primary-dark: #b892e5;
-    --color-secondary: #6D83B5;
-    --color-secondary-dark: #93A7D9;
-
-
-    /* Accent */
-    --color-accent: #FFD76B;        /* Brighter gold */
-    --color-accent-light: #FDE68A;
-
-    /* Special Sections */
-    --color-verse-bg: #1A1525;      /* Subtle deep purple tint */
-    --color-news-bg: #1C1C1C;
-  }
-}
 
 body {
   background: var(--background);

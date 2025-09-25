@@ -67,7 +67,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
         {/* CTA Buttons (reusable component) */}
         <div className="mt-8 flex gap-4">
           <Button text="Watch Live" inverted   />
-          <Button text="Become a Member"  />
+          <Button text="Become a Member"  href='/member'/>
 
         </div>
       </div>

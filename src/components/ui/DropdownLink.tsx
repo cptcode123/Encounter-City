@@ -8,7 +8,7 @@ import { ChevronDown } from "lucide-react";
 
 interface DropdownLinkProps {
   title: string;
-  links: { label: string; href: string }[];
+  links: { label: string; href: string; onClick?: () => void; }[];
 }
 
 const DropdownLink: React.FC<DropdownLinkProps> = ({ title, links }) => {
