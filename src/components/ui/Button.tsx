@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 interface ButtonProps {
   text: string;
   inverted?: boolean; // toggles between normal + inverted styles
-  onClick?: () => void;
+  href?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, inverted = false, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ text, inverted = false, href }) => {
   return (
-    <motion.button
+    <motion.a
       whileHover={{scale: 1.05}}
       whileClick={{scale:0.95}}
-      onClick={onClick}
+      href='/'
       className={`
         px-6 py-2 rounded-sm font-medium transition-colors duration-300 shadow-sm shadow-secondary text-nowrap
         ${inverted
@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({ text, inverted = false, onClick }) => {
       `}
     >
       {text}
-    </motion.button>
+    </motion.a>
   );
 };
 

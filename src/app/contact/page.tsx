@@ -2,39 +2,16 @@
 import Button from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import { House, Phone, Mail } from "lucide-react";
+import HeroStatic from "@/components/ui/HeroStatic";
+
+
+
 export default function ContactPage() {
 
     return (
         <div className="min-h-screen bg-bg text-text ">
-
-            {/* Hero */}
-            <section className="relative w-full z-0">
-                {/* Background Image */}
-                <div className="absolute inset-0 -z-10">
-                    <img src="/contact-hero.jpeg" alt="Contact Hero Background" className="w-full h-full object-cover" />
-                    {/* Overlay */}
-                <div className="absolute inset-0 bg-primary/80" />
-                </div>
-                
-
-                {/* Content */}
-                <div className=" relative px-10 py-16 grid md:grid-cols-2 items-center gap-10  w-full h-[700px] text-white z-10">
-                    {/* Text */}
-                    <div>
-                        <h1 className="text-5xl font-extrabold leading-tight mb-4 text-secondart">Get in Touch with Us</h1>
-                        <p className="text-lg-muted mb-15 text-wrap">
-                            Whether you have a question, prayer request, or want to visit, we're here for you
-                        </p>
-                    <a href="#send" className="pl-50"><Button text="Send a Message" /></a>
-                    </div>
-
-                    {/* Image */}
-                    <div className="flex justify-center">
-                    <img src='/contact-hero.jpeg' alt="Contact Hero" className="rounded-2xl shadow-lg object-cover w-full h-[350px]" />
-                    </div>
-                </div>
-            </section>
-
+            {/* Hero Section */}
+            <HeroStatic img="/contact-hero.jpeg" title="Get in Touch with Us" subtitle="Whether you have a question, prayer request, or want to visit, we're here for you" side />
             {/* Contact Info + Form */}
             <section className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto px-6 py-12">
 
@@ -112,7 +89,7 @@ export default function ContactPage() {
                     required
                     className="w-full p-3 rounded-md bg-surface inset-shadow-sm dark:inset-shadow-primary-dark"
                 />
-                <Button text="Send Message" />
+                <button type='submit'></button>
 
 
 
