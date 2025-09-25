@@ -60,7 +60,7 @@ export default function ContactPage() {
 
                 {/* Contact Form */}
                 <div> 
-                    <h1 className="text-3xl font-bold">Get in Touch</h1>
+                    <h1 className="text-3xl font-bold pl-6">Get in Touch</h1>
                 <motion.form className="space-y-6 order-1 bg-bg p-6 rounded-xl shadow-md" id="send"
                 initial={{opacity:0, y:-20}}
                 whileInView={{opacity:1, y:0}}
