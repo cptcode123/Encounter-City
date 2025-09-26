@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({ text, inverted = false, href }) => {
       whileTap={{ scale: 0.95 }}
       href={href}
       className={`
-        px-6 py-2 rounded-3xl font-medium transition-colors duration-300 shadow-sm  text-nowrap
+        px-6 py-2 rounded-3xl font-medium transition-colors duration-300 shadow-sm text-center text-nowrap
         ${inverted
           ? "bg-primary text-white hover:bg-primary-dark"
           : "bg-white text-primary hover:bg-primary-dark hover:text-white"}

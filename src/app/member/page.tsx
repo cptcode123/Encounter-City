@@ -24,7 +24,7 @@ export default function MemberPage() {
         <div className='min-h-screen flex flex-col gap-8 bg-bg'> 
 
         {/* Hero Section */}
-        <HeroStatic title=" Thinking about becoming a member?" subtitle="Here's the roadmap to becoming a member of Encounter City" img='/rect-img-5.jpg'/>
+        <HeroStatic title=" Thinking about becoming a member?" subtitle="Here's the roadmap" img='/rect-img-5.jpg'/>
 
         {/* Title Section */}
 
@@ -42,7 +42,7 @@ export default function MemberPage() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className='text-center text-xl w-[80%] mx-auto mb-10'>
-                Membership at Encounter City is more than just a title; it's a commitment to grow, serve, and belong. As a member, you will have the opportunity to deepen your faith, connect with a supportive community, and actively participate in the life and mission of our church.<br/><br/> So here's how to become one of us.
+                Membership at Encounter City is more than just a title; it's a commitment to grow, serve, and belong. As a member, you will have the opportunity to deepen your faith, connect with a supportive community, and actively participate in the life and mission of our church.<br/><br/> Here are the steps you need to take to become one of us.
 
             </motion.p>
         
@@ -66,13 +66,18 @@ export default function MemberPage() {
         
 
         {/* Sign Up */}
-        <div className='w-[80%] mx-auto bg-surface text-text flex flex-col items-center justify-center py-13 rounded-xl'>
-            <motion.h1 className='text-4xl font-bold mb-5'> But first, you need to sign up</motion.h1>
+        <div className='w-full mx-auto text-text flex flex-col items-center justify-center py-13 bg-[#CCB3E6]'>
+            <motion.h1 
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
+            transition={{duration:0.8}}
+            className='text-4xl font-bold mb-5 text-primary '> But first, we want to know who you are</motion.h1>
 
-        <motion.form className="w-full rounded-3xl flex flex-col gap-1 justify-center" action="">
+        <motion.form className="w-[80%] rounded-3xl flex flex-col gap-1 justify-center bg-[#E6D9F3] shadow-lg py-10 px-10 backdrop-blur-md" action="">
             <div className='p-5 flex flex-row gap-10 justify-center'>
-                <input type="text" placeholder="Enter your name" className="w-50% p-5 inset-shadow-sm inset-shadow-primary rounded-4xl focus:border-none" />
-                <input type="text" placeholder="Enter your Phone Number" className="w-50% p-5 inset-shadow-sm inset-shadow-primary rounded-4xl focus:border-none" />
+                <input type="text" placeholder="Enter your name" className="w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required " />
+                <input type="text" placeholder="Enter your Phone Number" className="w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required " />
+                <input type="text" placeholder="Enter your Email address" className='w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required ' />
             </div>
             <button type='submit' className='w-[20%] mx-auto p-3 bg-primary text-bg rounded-3xl'>Submit</button>
         </motion.form>
