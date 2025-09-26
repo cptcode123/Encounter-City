@@ -32,11 +32,6 @@ const Header = () => {
 
       </nav>
 
-      {/* CTA Button */}
-      <div className="hidden lg:flex gap-5 ml-5 -mr-3">
-        <Button text="Request a Prayer" inverted href="/contact"/>
-      </div>
-
        {/*Menu Button */}
           <button
           className="lg:hidden"
