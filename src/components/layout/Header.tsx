@@ -10,26 +10,19 @@ const Header = () => {
     const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <header className="w-full bg-bg text-primary px-6 py-4 flex justify-between items-center z-20">
+    <header className="w-full bg-[#fffff] text-primary px-10 py-4 flex justify-between items-center z-20">
       {/* Logo */}
       <Link href="/" className="text-xl font-bold text-wrap">
-        The Encounter City Christian Centre
+        <img src="/logo.jpg" alt="The Encounter City Christian Centre" className="w-15 h-auto"/>
       </Link>
 
       {/* Nav Links */}
-      <nav className="hidden lg:flex gap-7 items-center shrink text-nowrap ">
+      <nav className="hidden lg:flex gap-7 items-center shrink text-nowrap pr-10">
         <Link href="/about" className="hover:text-secondary-dark">About Us</Link>
-        <DropdownLink 
-                title="Words from our Pastors"
-                links={[
-                    { label: "Sermons", href: "/sermons" },
-                    { label: "Daily Devotions", href: "/daily-devotions" },
-                    { label: "Deep in Thought", href: "/deep-in-thought" }
-                ]}
-                />
+        <Link href="/blog" className="hover:text-secondary-dark">Words from our Pastor</Link>
         <Link href="/services" className="hover:text-secondary-dark">Services</Link>
         <Link href="/give" className="hover:text-secondary-dark">Give</Link>
-
+        <Link href='/'>Listen to us Live</Link>
       </nav>
 
        {/*Menu Button */}
@@ -59,6 +52,7 @@ const Header = () => {
                 />
                 <Link href="/services" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>Services</Link>
                 <Link href="/contact" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>Get in touch</Link>
+                <Link href="/give" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>Give</Link>
                 </motion.nav>
             )}
         </AnimatePresence>        

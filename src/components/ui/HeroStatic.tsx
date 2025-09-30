@@ -21,13 +21,15 @@ const HeroStatic = ({ img, title, subtitle, side }: HeroStaticProps) => {
                 
 
                 {/* Content */}
-                <div className={`relative px-10 py-16  items-center w-full h-[700px] text-white z-10 ${ side ? 'grid md:grid-cols-2 gap-10' : 'flex items-center justify-center'}`}>
+                <div className={`relative px-10 py-16  items-center w-[50%] mx-auto h-[700px] text-white z-10 ${ side ? 'grid md:grid-cols-2 gap-10' : 'flex items-center justify-center'}`}>
                     {/* Text */}
                     <div className="order-2 md:order-1 text-center">
                         <h1 className="text-5xl font-extrabold leading-tight mb-4 text-wrap w-200">{title}</h1>
-                    {subtitle && <p className="text-xl text-muted mb-15 text-wrap font-bold">
+                    {
+                    subtitle && <p className="text-xl text-muted mb-15 text-wrap font-bold">
                         {subtitle}
-                    </p>}
+                    </p>
+                    }
                     </div>
 
                     {/* Image */}

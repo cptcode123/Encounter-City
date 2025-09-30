@@ -1,0 +1,15 @@
+'use client'
+import { motion } from "framer-motion";
+import React from "react"
+import HeroStatic from "@/components/ui/HeroStatic";
+
+
+export default function Blog() {
+    return (
+        <div>
+            <div className="w-full h-[6000px]">
+                <HeroStatic title="Words from our Pastor" subtitle="Encouragement and Inspiration straight from God to You via His Word" img="/landscape-2.jpg"/>
+            </div>
+        </div>
+    )
+}   

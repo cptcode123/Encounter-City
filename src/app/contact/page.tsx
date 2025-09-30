@@ -11,7 +11,7 @@ export default function ContactPage() {
     return (
         <div className="min-h-screen bg-bg text-text ">
             {/* Hero Section */}
-            <HeroStatic img="/rect-img-1.jpg" title="Get in Touch with Us" subtitle="Whether you have a question, prayer request, or want to visit, we're here for you" side />
+            <HeroStatic img="/rect-img-1.jpg" title="Get in Touch with Us" subtitle="Whether you have a question, prayer request, or want to visit, we're here for you"/>
             {/* Contact Info + Form */}
             <section className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto px-6 py-12">
 
@@ -70,24 +70,24 @@ export default function ContactPage() {
                     type="text"
                     placeholder="Your Name" 
                     required
-                    className="w-full p-3 rounded-md bg-surface text-text inset-shadow-sm dark:inset-shadow-primary-dark"/>
+                    className="w-full p-3 rounded-md text-text inset-shadow-sm dark:inset-shadow-primary-dark"/>
                      <input
                     type="email"
                     placeholder="Your Email"
                     required
-                    className="w-full p-3 rounded-md bg-surface text-text inset-shadow-sm dark:inset-shadow-primary-dark"
+                    className="w-full p-3 rounded-md text-text inset-shadow-sm dark:inset-shadow-primary-dark"
                 />
                 </div>
                 <input
                     type="text"
                     placeholder="Subject"
-                    className="w-full p-3 rounded-md bg-surface  inset-shadow-sm dark:inset-shadow-primary-dark"
+                    className="w-full p-3 rounded-md inset-shadow-sm dark:inset-shadow-primary-dark"
                 />
                 <textarea
                     placeholder="Message"
                     rows={5}
                     required
-                    className="w-full p-3 rounded-md bg-surface inset-shadow-sm dark:inset-shadow-primary-dark"
+                    className="w-full p-3 rounded-md inset-shadow-sm dark:inset-shadow-primary-dark"
                 />
                 <button type='submit'></button>
 

@@ -1,59 +1,62 @@
-import { div } from "framer-motion/client";
-import React, { ReactNode } from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Button from "./Button";
+"use client";
 
+import { Play } from "lucide-react";
 
-interface CardProps {
-    title: string;
-    subtitle?: string;
-    description?: string;
-    img?: string;
-    href?: string;
-    ctaText?: string;
-    children?: ReactNode
-    variant?: "default" | "outlined" | "shadow"
+type ServiceCardProps = {
+  title: string;
+  image: string;
+  onClick?: () => void;
+  href?: string;
+};
+
+export  function ServiceCard({ title, image, onClick, href }: ServiceCardProps) {
+  const Wrapper = href ? "a" : "div";
+
+  return (
+    <Wrapper
+      href={href}
+      onClick={onClick}
+      className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+    >
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+
+      {/* Overlay for readability */}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+        <h3 className="text-white text-lg font-semibold">{title}</h3>
+      </div>
+    </Wrapper>
+  );
 }
 
-export default function Card(
-    {
-        title,
-        subtitle,
-        description,
-        img,
-        href,
-        ctaText,
-        children,
-        variant = 'default'
-    }: CardProps
-) {
 
-    return (
-        <motion.div
-        whileHover={{scale:1.025}}
-        className= {`
-        overflow-hidden transition-all duration-300
-        ${variant === 'default' ? "bg-surface shadow " : ""}
-        ${variant === 'shadow' ? "shadow-lg hover:shadow-xl" : ""}
-        ${variant === 'outlined' ? "border border-border" : ""}
-        `}>
-            {img && (
-                <Image src={img} alt={title || "card image"}  className="w-full h-48 object-cover"/> 
-            )}
 
-        <div className="p-4 flex flex-col gap-2">
-            {title && <div className="text-primary">{title}</div>}
-            {subtitle && <div className="text-lg font-semibold text-secondary">{subtitle}</div>}
-            {description && <div className="text-sm text-secondary">{description}</div>}
+type RecordingCardProps = {
+  title: string;
+  image: string;
+  onClick: () => void;
+};
 
-            {children}
+export function RecordingCard({ title, image, onClick }: RecordingCardProps) {
+  return (
+    <div
+      className="relative rounded-xl overflow-hidden shadow-lg h-64 w-full bg-cover bg-center cursor-pointer group"
+      style={{ backgroundImage: `url(${image})` }}
+      onClick={onClick}
+    >
+      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
 
-            {href && <Button href={href} text={ctaText || "Learn More"}/>}
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <Play size={48} className="text-white" />
+      </div>
 
-        </div>
-
-        </motion.div>
-    )
-
+      <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white p-2">
+        <h3 className="text-lg font-semibold">{title}</h3>
+      </div>
+    </div>
+  );
 }
+

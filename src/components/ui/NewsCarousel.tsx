@@ -33,12 +33,13 @@ export default function NewsCarousel({ cards }: Props) {
   return (
     <div className="relative w-full flex items-center justify-center">
       {/* Left Button */}
-      <button
+      <motion.button
+        whileHover={{ scale: 1.1 }}
         onClick={prev}
         className="absolute left-2 md:left-8 z-20 p-2 md:p-3 rounded-full bg-gray-100/80 hover:bg-gray-200 shadow"
       >
         <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
-      </button>
+      </motion.button>
 
       {/* Cards */}
       <div className="flex items-center justify-center space-x-0 md:space-x-6 h-[22rem] md:h-[26rem] w-full px-10 md:px-20">
@@ -108,12 +109,13 @@ export default function NewsCarousel({ cards }: Props) {
       </div>
 
       {/* Right Button */}
-      <button
+      <motion.button
+      whileHover={{ scale: 1.1 }}
         onClick={next}
         className="absolute right-2 md:right-8 z-20 p-2 md:p-3 rounded-full bg-gray-100/80 hover:bg-gray-200 shadow"
       >
         <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
-      </button>
+      </motion.button>
     </div>
   );
 }
