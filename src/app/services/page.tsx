@@ -37,7 +37,7 @@ export default function MinistryPage() {
     return (
         <div>
             {/* Hero */}
-            <HeroStatic title="Our Services" subtitle='Discover what the Lord has enabled us to offer' img='/landscape-1.jpg'/>
+            <HeroStatic title="Our Services" subtitle='Discover what the Lord has enabled us to offer' image='/landscape-1.jpg'/>
 
             {/* Section Grid */}
             <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

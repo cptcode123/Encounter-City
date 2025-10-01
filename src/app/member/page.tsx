@@ -24,7 +24,7 @@ export default function MemberPage() {
         <div className='min-h-screen flex flex-col gap-8 bg-bg'> 
 
         {/* Hero Section */}
-        <HeroStatic title=" Thinking about becoming a member?" subtitle="Here's the roadmap" img='/rect-img-5.jpg'/>
+        <HeroStatic title=" Thinking about becoming a member?" subtitle="Here's the roadmap" image='/rect-img-5.jpg'/>
 
         {/* Title Section */}
 

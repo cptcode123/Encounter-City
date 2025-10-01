@@ -16,7 +16,7 @@ export default async function SchoolOfTheSpiritPage() {
     return (
         <div>
             {/* Hero */}
-            <HeroStatic title="School of the Spirit" subtitle="Deepen Your Spiritual Walk on Tuesdays" img="/school-of-spirit.jpg" />
+            <HeroStatic title="School of the Spirit" subtitle="Deepen Your Spiritual Walk on Tuesdays" image="/school-of-spirit.jpg" />
 
             {/* Content */}
             <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

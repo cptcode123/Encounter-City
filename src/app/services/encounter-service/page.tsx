@@ -16,7 +16,7 @@ export default async function SchoolOfTheSpiritPage() {
     return (
         <div>
             {/* Hero */}
-            <HeroStatic title="Encounter God Service" subtitle="" img="/logo-purple.jpg" />
+            <HeroStatic title="Encounter God Service" subtitle="" image="/logo-purple.jpg" />
 
             {/* Content */}
             <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
