@@ -9,14 +9,14 @@ import HeroStatic from "@/components/ui/HeroStatic";
 export default function ContactPage() {
 
     return (
-        <div className="min-h-screen bg-bg text-text ">
+        <div className="min-h-screen bg-bg text-text w-full">
             {/* Hero Section */}
             <HeroStatic image="/rect-img-1.jpg" title="Get in Touch with Us" subtitle="Whether you have a question, prayer request, or want to visit, we're here for you"/>
             {/* Contact Info + Form */}
-            <section className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto px-6 py-12">
+            <section className="flex flex-col gap-12 max-w-6xl mx-auto px-6 py-12">
 
                 {/* Contact Info */}
-                <div className="space-y-4 order-2 flex flex-col ml-10 gap-15" >
+                <div className=" order-1 flex flex-col  gap-15" >
 
                     <motion.div 
                     initial={{opacity:0, y:-20}}
@@ -29,19 +29,19 @@ export default function ContactPage() {
                     initial={{opacity:0, y:-20}}
                     whileInView={{opacity:1, y:0}}
                     transition={{duration:0.8}}
-                    className="flex items-center gap-8 text-3xl text-nowrap">
+                    className="flex items-center gap-2 text-3xl text-wrap">
                         <House className="w-15 h-15 text-primary shrink-0" />
-                        <span>123 Encounter Street, Lagos, Nigeria</span>
+                        <span>Hotel Ibis Royale, Ajao Estate, Lagos, Nigeria</span>
                     </motion.div>
 
                 <motion.div
                     initial={{opacity:0, y:-20}}
                     whileInView={{opacity:1, y:0}}
                     transition={{duration:0.8}}
-                    className="flex items-center gap-8 text-3xl text-nowrap">
+                    className="flex items-center gap-2 text-3xl text-wrap">
                     <Mail className="w-15 h-15 text-primary shrink-0" />
-                    <a href="mailto:info@encountercity.org" className="hover:text-primary-dark">
-                    info@encountercity.org
+                    <a href="mailto:theencountercity@gmail.com" className="hover:text-primary-dark wrap-anywhere">
+                    theencountercity@gmail.com
                     </a>
                 </motion.div>
 
@@ -49,7 +49,7 @@ export default function ContactPage() {
                     initial={{opacity:0, y:-20}}
                     whileInView={{opacity:1, y:0}}
                     transition={{duration:0.8}}
-                    className="flex items-center gap-8 text-3xl text-nowrap">
+                    className="flex items-center gap-2 text-3xl text-wrap">
                     <Phone className="w-15 h-15 text-primary shrink-0" />
                     <a href="tel:+2348000000000" className="hover:text-primary-dark">
                     +234 800 000 0000
@@ -59,13 +59,13 @@ export default function ContactPage() {
                 </div>
 
                 {/* Contact Form */}
-                <div> 
-                    <h1 className="text-3xl font-bold pl-6">Get in Touch</h1>
-                <motion.form className="space-y-6 order-1 bg-bg p-6 rounded-xl shadow-md" id="send"
+                <div className="flex flex-col order-2 "> 
+                    <h1 className="text-3xl font-bold pl-6 mb-10">Get in Touch</h1>
+                <motion.form className="space-y-6 order-1 bg-bg p-6 rounded-xl " id="send"
                 initial={{opacity:0, y:-20}}
                 whileInView={{opacity:1, y:0}}
                 transition={{duration:0.8}}>
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid grid-col-1 md:grid-cols-2 gap-4">
                     <input 
                     type="text"
                     placeholder="Your Name" 
