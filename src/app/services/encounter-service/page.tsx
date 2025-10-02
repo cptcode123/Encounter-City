@@ -4,7 +4,6 @@ import React from "react"
 import HeroStatic from "@/components/ui/HeroStatic"
 import { motion } from "framer-motion"
 import { fetchRecordingsByKeyword, MixlrRecording } from "../../../../lib/mixlr"
-import RecordingGallery from "@/components/ui/RecordingGallery"
 
 
 
@@ -28,8 +27,6 @@ export default async function SchoolOfTheSpiritPage() {
                 >
                     School of the Spirit
                 </motion.h2>
-
-                <RecordingGallery recordings={tuesdayRecordings} imageUrl="/logo-purple.jpg" />
             </section>
         </div>
     )
