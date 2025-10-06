@@ -1,7 +1,6 @@
 
 import React from "react"
 import HeroStatic from "@/components/ui/HeroStatic"
-import { motion } from "framer-motion"
 import { fetchRecordingsByKeyword } from "../../../../lib/mixlr"
 import MediaCard from "@/components/ui/MediaCard"
 
@@ -10,7 +9,7 @@ import MediaCard from "@/components/ui/MediaCard"
 export default async function SchoolOfTheSpiritPage() {
     const feedUrl = 'https://apicdn.mixlr.com/rss-feeds/3017'
 
-    const recordings = await fetchRecordingsByKeyword(feedUrl, 'school', "School-of-the-Spirit")
+    const recordings = await fetchRecordingsByKeyword(feedUrl, 'school')
 
     return (
         <div>

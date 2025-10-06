@@ -3,7 +3,7 @@
 import React from 'react'
 import Accordion from '@/components/ui/Accordion'
 import HeroStatic from '@/components/ui/HeroStatic'
-import { delay, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 
 export default function MemberPage() {
@@ -34,7 +34,7 @@ export default function MemberPage() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             className='text-3xl font-extrabold text-center my-10 text-primary'>
-                Here's what you need to know
+                Here is what you need to know
             </motion.h1>
 
             <motion.p
@@ -42,7 +42,7 @@ export default function MemberPage() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className='text-center text-xl w-[80%] mx-auto mb-10'>
-                Membership at Encounter City is more than just a title; it's a commitment to grow, serve, and belong. As a member, you will have the opportunity to deepen your faith, connect with a supportive community, and actively participate in the life and mission of our church.<br/><br/> Here are the steps you need to take to become one of us.
+                Membership at Encounter City is more than just a title; it is a commitment to grow, serve, and belong. As a member, you will have the opportunity to deepen your faith, connect with a supportive community, and actively participate in the life and mission of our church.<br/><br/> Here are the steps you need to take to become one of us.
 
             </motion.p>
         

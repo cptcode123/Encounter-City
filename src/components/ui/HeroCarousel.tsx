@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, delay } from "framer-motion";
+import { motion, AnimatePresence} from "framer-motion";
 import Button from "@/components/ui/Button"; 
 
 type Slide = {

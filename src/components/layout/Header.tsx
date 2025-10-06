@@ -2,9 +2,9 @@
 import React from "react";
 import Link from "next/link";
 import DropdownLink from "../ui/DropdownLink";
-import Button from "../ui/Button";
 import { Menu,X } from "lucide-react";
 import {motion, AnimatePresence} from 'framer-motion';
+import Image from "next/image";
 
 const Header = () => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -13,7 +13,7 @@ const Header = () => {
     <header className="w-full bg-[#fffff] text-primary px-10 py-4 flex justify-between items-center z-20">
       {/* Logo */}
       <Link href="/" className="text-xl font-bold text-wrap">
-        <img src="/logo.jpg" alt="The Encounter City Christian Centre" className="w-15 h-auto"/>
+        <Image src="/logo.jpg" alt="The Encounter City Christian Centre" className="w-15 h-auto"/>
       </Link>
 
       {/* Nav Links */}

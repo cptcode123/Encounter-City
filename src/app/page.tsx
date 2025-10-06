@@ -33,7 +33,7 @@ export default function Home() {
         <div className="w-[80%] flex flex-col md:flex-row gap-7 justify-between mx-auto px-10 min-w-48">
           <div className="flex flex-col gap-8 w-full md:w-[50%] order-2" >
             <h1 className="text-4xl font-bold text-white"> You are welcome here</h1>
-            <p className="text-lg text-gray-300 text-wrap mb-3">At Encounter City, we believe in the transformative power of Christ's love. Join us as we worship, learn, and grow together in faith.</p>
+            <p className="text-lg text-gray-300 text-wrap mb-3">At Encounter City, we believe in the transformative power of Christ love. Join us as we worship, learn, and grow together in faith.</p>
 
             <div className=" flex justify-center md:align-left md:w-[30%]"><Button text="Join our Family" href="/member"/></div>
             
@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* News Section with CTA  leading to blog */}
       <section className="w-full flex flex-col  text-center py-4 pt-10">
-        <h1 className="mt-5 text-3xl font-bold text-primary-dark"> Here's what we've been up to</h1>
+        <h1 className="mt-5 text-3xl font-bold text-primary-dark"> Here is what we have been up to</h1>
 
         <div className="w-full mx-auto my-10 bg-gray-300 pb-10">
           <NewsCarousel cards={churchNews} />

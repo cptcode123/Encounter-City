@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 type NewsCard = {
   id: number;
@@ -54,7 +55,7 @@ export default function NewsCarousel({ cards }: Props) {
               className="rounded-2xl shadow-lg bg-white w-64 h-80 overflow-hidden"
               whileHover={{ scale: 1.05 }}
             >
-              <img
+              <Image
                 src={card.image}
                 alt={card.title}
                 className="w-full h-40 object-cover"
@@ -90,7 +91,7 @@ export default function NewsCarousel({ cards }: Props) {
                 className={`rounded-2xl shadow-lg bg-white w-56 h-80 md:w-72 md:h-96 overflow-hidden transform ${blur}`}
                 whileHover={{ scale: isCenter ? 1.05 : 0.9 }}
               >
-                <img
+                <Image
                   src={card.image}
                   alt={card.title}
                   className="w-full h-32 md:h-40 object-cover"

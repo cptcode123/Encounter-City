@@ -1,6 +1,5 @@
 import React from "react"
 import HeroStatic from "@/components/ui/HeroStatic"
-import { motion } from "framer-motion"
 import MediaCard from "@/components/ui/MediaCard"
 import { fetchRecordingsByKeyword } from "../../../../lib/mixlr"
 
@@ -9,7 +8,7 @@ export default async function EncounterServicePage() {
 
     const feedUrl = "https://apicdn.mixlr.com/rss-feeds/3017"
 
-    const recordings = fetchRecordingsByKeyword(feedUrl,"service","Encounter-God-Service")
+    const recordings = fetchRecordingsByKeyword(feedUrl,"service")
    
     return (
         <div>

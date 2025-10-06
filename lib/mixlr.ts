@@ -1,6 +1,3 @@
-import { log } from 'console';
-import { filter } from 'framer-motion/client';
-import { title } from 'process';
 import Parser from 'rss-parser';
 
 const parser = new Parser();
@@ -42,7 +39,6 @@ export async function fetchMixlrRecordings(feedUrl: string): Promise<MixlrRecord
 export async function fetchRecordingsByKeyword(
     feedUrl: string,
     keyword: string,
-    serviceType: "Encounter-God-Service" | "School-of-the-Spirit" | "A-time-to-contend"
 ): Promise<MixlrRecording[]> {
     const allRecordings = await fetchMixlrRecordings(feedUrl);
 

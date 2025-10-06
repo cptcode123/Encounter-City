@@ -1,5 +1,4 @@
 'use client'
-import { motion } from "framer-motion";
 import React from "react"
 import HeroStatic from "@/components/ui/HeroStatic";
 
