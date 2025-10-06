@@ -1,7 +1,6 @@
 'use client'
 import React from "react";
 import Link from "next/link";
-import DropdownLink from "../ui/DropdownLink";
 import { Menu,X } from "lucide-react";
 import {motion, AnimatePresence} from 'framer-motion';
 import Image from "next/image";

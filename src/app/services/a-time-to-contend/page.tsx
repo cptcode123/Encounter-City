@@ -22,7 +22,7 @@ export default async function EncounterServicePage() {
 
                 <div id='gallery' className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
                     {(await recordings).map((recording, index) => (
-                        <MediaCard key={index} title={recording.title} link={recording.link} />
+                        <MediaCard key={index} title={`${recording.title} - ${recording.pubDate}`} link={recording.link} />
                     ))}
 
                 </div>
