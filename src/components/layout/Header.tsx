@@ -22,7 +22,7 @@ const Header = () => {
         <Link href="/blog" className="hover:text-secondary-dark">Words from our Pastor</Link>
         <Link href="/services" className="hover:text-secondary-dark">Services</Link>
         <Link href="/give" className="hover:text-secondary-dark">Give</Link>
-        <Link href='/'>Listen to us Live</Link>
+        <Link href='#live'>Listen to us Live</Link>
       </nav>
 
        {/*Menu Button */}
