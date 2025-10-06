@@ -42,14 +42,7 @@ const Header = () => {
                 exit={{ opacity: 0}}
                 className="lg:hidden bg-surface text-primary flex flex-col gap-5 px-6 py-4 absolute top-15 left-0 right-0 z-20">
                 <Link href="/about" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>About Us</Link>
-                <DropdownLink 
-                title="Words from our Pastor"
-                links={[
-                    { label: "Sermons", href: "/youth", onClick: () => setIsOpen(false) },
-                    { label: "Daily Devotions", href: "/women-warriors", onClick: () => setIsOpen(false) },
-                    { label: "Deep in Thought", href: "/workers", onClick: () => setIsOpen(false) }
-                ]}
-                />
+                <Link href="/blog" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}> Words from our Pastor</Link>
                 <Link href="/services" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>Services</Link>
                 <Link href="/contact" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>Get in touch</Link>
                 <Link href="/give" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>Give</Link>
