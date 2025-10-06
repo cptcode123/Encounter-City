@@ -1,3 +1,5 @@
+import { log } from 'console';
+import { filter } from 'framer-motion/client';
 import { title } from 'process';
 import Parser from 'rss-parser';
 
@@ -8,8 +10,6 @@ export type MixlrRecording = {
     description?: string;
     link: string;
     pubDate: string;
-    audioUrl: string;
-    imageUrl?: string;
     serviceType?: "Encounter-God-Service" | "School-of-the-Spirit" | "A-time-to-contend"
 
 };
@@ -27,10 +27,9 @@ export async function fetchMixlrRecordings(feedUrl: string): Promise<MixlrRecord
             description: item.contentSnippet || "",
             link: item.link || "",
             pubDate: item.pubDate || "",
-            audioUrl: item.enclosure?.url || "",
-            imageUrl: item.image?.url || "" 
         }));
 
+        console.log("Successfully collected ", recordings.length, " recordings")
         return recordings;   
     } catch (error) {
         console.error("Error fetching or parsing the RSS feed:", error);
@@ -47,15 +46,14 @@ export async function fetchRecordingsByKeyword(
 ): Promise<MixlrRecording[]> {
     const allRecordings = await fetchMixlrRecordings(feedUrl);
 
-    return allRecordings.filter((item) => item.title?.toLowerCase().includes(keyword.toLowerCase()))
+
+    const filteredRecordings = allRecordings.filter((item) => item.title?.toLowerCase().includes(keyword.toLowerCase()))
     .map((item) => ({
       title: item.title || "Untitled",
       pubDate: item.pubDate || "",
-      audioUrl: item.audioUrl || "",
-      imageUrl:
-        (item as any).itunesImage?.["@_href"] ||
-        item.imageUrl ||
-        "/default-cover.jpg",
       link: item.link || "",
     }));
+
+    console.log("Successfully fetched recordings: ", filteredRecordings)
+    return filteredRecordings
 }

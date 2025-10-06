@@ -1,0 +1,23 @@
+[
+  {
+    "ID": "hero-001",
+    "Title": "Welcome Message",
+    "Description": "This is the hero section text.",
+    "Image URL": "https://via.placeholder.com/600x300.png?text=Hero+Image",
+    "Category": "Hero"
+  },
+  {
+    "ID": "service-001",
+    "Title": "Web Development",
+    "Description": "We build scalable Next.js applications.",
+    "Image URL": "https://via.placeholder.com/400x300.png?text=Service+Image",
+    "Category": "Services"
+  },
+  {
+    "ID": "about-001",
+    "Title": "About Us",
+    "Description": "We are a creative agency passionate about design and technology.",
+    "Image URL": "https://via.placeholder.com/500x300.png?text=About+Image",
+    "Category": "About"
+  }
+]
