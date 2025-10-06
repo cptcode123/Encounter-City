@@ -1,13 +1,10 @@
 'use client'
-import { div } from "framer-motion/client";
 import Image from "next/image";
 import HeroCarousel from "../components/ui/HeroCarousel";
-import Accordion from "@/components/ui/Accordion";
-import { title } from "process";
+
 import Button from "@/components/ui/Button";
 import NewsCarousel from "@/components/ui/NewsCarousel";
 import { churchNews } from '../../lib/news'
-import { HeartHandshake } from "lucide-react";
 
 export default function Home() {
   return (
@@ -39,7 +36,7 @@ export default function Home() {
             
           </div>
           <div className="order-1 md:order-2">
-            <img src="/rect-img-6.jpg" alt="" />
+            <Image src="/rect-img-6.jpg" alt="" />
           </div>
         </div>
 

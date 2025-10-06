@@ -1,6 +1,7 @@
 "use client";
 
 import { Play } from "lucide-react";
+import Image from "next/image";
 
 type ServiceCardProps = {
   title: string;
@@ -18,7 +19,7 @@ export  function ServiceCard({ title, image, onClick, href }: ServiceCardProps) 
       onClick={onClick}
       className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer"
     >
-      <img
+      <Image
         src={image}
         alt={title}
         className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"

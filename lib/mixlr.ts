@@ -19,12 +19,20 @@ export async function fetchMixlrRecordings(feedUrl: string): Promise<MixlrRecord
     try {
         const feed = await parser.parseURL(feedUrl);
 
-        const recordings: MixlrRecording[] = feed.items.map((item: any)  => ({
-            title: item.title || "Untitled",
-            description: item.contentSnippet || "",
-            link: item.link || "",
-            pubDate: item.pubDate || "",
-        }));
+        const recordings: MixlrRecording[] = feed.items.map((item: unknown) => {
+            const feedItem = item as {
+                title?: string;
+                contentSnippet?: string;
+                link?: string;
+                pubDate?: string;
+            };
+            return {
+                title: feedItem.title || "Untitled",
+                description: feedItem.contentSnippet || "",
+                link: feedItem.link || "",
+                pubDate: feedItem.pubDate || "",
+            };
+        });
 
         console.log("Successfully collected ", recordings.length, " recordings")
         return recordings;   
