@@ -84,9 +84,9 @@ export default function Home() {
 
       <section className="w-full flex flex-col justify-center mx-auto text-center" id='live'>
         <h1 className="text-bold text-3xl text-primary my-4">We are Live...</h1>
-        <a href="/encounter-service" className="text-primary">On Sundays: 9:00AM - 12:00PM</a>
-        <a href="/school-of-the-spirit" className="text-primary">On Tuesdays: 6:00PM - 8:00PM</a>
-        <a href="/a-time-to-contend" className="text-primary">Every Monday and Friday Morning: 6:00AM-8:00AM</a>
+        <a href="/service/encounter-service" className="text-primary">On Sundays: 9:00AM - 12:00PM</a>
+        <a href="/services/school-of-the-spirit" className="text-primary">On Tuesdays: 6:00PM - 8:00PM</a>
+        <a href="/services/a-time-to-contend" className="text-primary">Every Monday and Friday Morning: 6:00AM-8:00AM</a>
         <iframe src="https://theencountercity.mixlr.com/embed" frameBorder="0" scrolling="no" height="200px" width="100%" className="mt-3"></iframe>
       </section>
 
