@@ -12,7 +12,7 @@ const Header = () => {
     <header className="w-full bg-[#fffff] text-primary px-10 py-4 flex justify-between items-center z-20">
       {/* Logo */}
       <Link href="/" className="text-xl font-bold text-wrap">
-        <Image src="/logo.jpg" alt="The Encounter City Christian Centre" className="w-15 h-auto"/>
+        <Image src="/logo.jpg" alt="The Encounter City Christian Centre" className="w-15 h-auto" width={20} height={20}/>
       </Link>
 
       {/* Nav Links */}
