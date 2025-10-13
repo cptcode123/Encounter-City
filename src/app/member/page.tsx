@@ -74,7 +74,7 @@ export default function MemberPage() {
             className='text-4xl font-bold mb-5 text-primary '> But first, we want to know who you are</motion.h1>
 
         <motion.form className="w-[80%] rounded-3xl flex flex-col gap-1 justify-center bg-[#E6D9F3] shadow-lg py-10 px-10 backdrop-blur-md" action="">
-            <div className='p-5 flex flex-row gap-10 justify-center'>
+            <div className='p-5 flex flex-col md:flex-row gap-10 justify-center'>
                 <input type="text" placeholder="Enter your name" className="w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required " />
                 <input type="text" placeholder="Enter your Phone Number" className="w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required " />
                 <input type="text" placeholder="Enter your Email address" className='w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required ' />

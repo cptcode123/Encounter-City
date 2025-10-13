@@ -58,7 +58,9 @@ export default function NewsCarousel({ cards }: Props) {
               <Image
                 src={card.image}
                 alt={card.title}
-                className="w-full h-40 object-cover"
+                className="w-full h-40 object-cover relative"
+                width={60}
+                height={60}
               />
               <div className="p-4">
                 <h3 className="font-bold text-lg">{card.title}</h3>
@@ -94,7 +96,9 @@ export default function NewsCarousel({ cards }: Props) {
                 <Image
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-32 md:h-40 object-cover"
+                  className="w-full h-32 md:h-40 object-cover relative"
+                  width={60}
+                  height={60}
                 />
                 <div className="p-4">
                   <h3 className="font-bold text-lg">{card.title}</h3>
