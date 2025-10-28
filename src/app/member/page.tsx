@@ -71,15 +71,15 @@ export default function MemberPage() {
             initial={{opacity:0}}
             whileInView={{opacity:1}}
             transition={{duration:0.8}}
-            className='text-4xl font-bold mb-5 text-primary '> But first, we want to know who you are</motion.h1>
+            className='text-4xl font-bold mb-5 text-primary text-center'> But first, we want to know who you are</motion.h1>
 
-        <motion.form className="w-[80%] rounded-3xl flex flex-col gap-1 justify-center bg-[#E6D9F3] shadow-lg py-10 px-10 backdrop-blur-md" action="">
-            <div className='p-5 flex flex-col md:flex-row gap-10 justify-center'>
-                <input type="text" placeholder="Enter your name" className="w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required " />
-                <input type="text" placeholder="Enter your Phone Number" className="w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required " />
-                <input type="text" placeholder="Enter your Email address" className='w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required ' />
+        <motion.form className="w-[80%] rounded-3xl flex flex-col gap-1 justify-center bg-[#E6D9F3] shadow-lg py-10 px-6 backdrop-blur-md" action="">
+            <div className='p-5 flex flex-col md:flex-row gap-20 justify-center'>
+                <input type="text" placeholder="Name" className="p-5 text-center inset-shadow-sm inset-shadow-primary rounded-4xl required " />
+                <input type="text" placeholder="Phone" className=" p-5 text-center inset-shadow-sm inset-shadow-primary rounded-4xl required " />
+                <input type="text" placeholder="Email" className=' p-5 text-center inset-shadow-sm inset-shadow-primary rounded-4xl required ' />
             </div>
-            <button type='submit' className='w-[20%] mx-auto p-3 bg-primary text-bg rounded-3xl'>Submit</button>
+            <button type='submit' className='mx-auto p-3 bg-primary text-bg rounded-3xl'>Submit</button>
         </motion.form>
         
         </div>
