@@ -58,8 +58,8 @@ export default function ContactPage() {
                 </div>
 
                 {/* Contact Form */}
-                <div className="flex flex-col order-2 "> 
-                    <h1 className="text-3xl font-bold pl-6 mb-10">Get in Touch</h1>
+                <div className="flex flex-col order-2  bg-primary w-full  mx-auto rounded-2xl shadow-lg p-6"> 
+                    <h1 className="text-3xl text-white font-bold pl-6 mb-10 text-center">Send us a Message</h1>
                 <motion.form className="space-y-6 order-1 bg-bg p-6 rounded-xl " id="send"
                 initial={{opacity:0, y:-20}}
                 whileInView={{opacity:1, y:0}}
