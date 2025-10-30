@@ -4,6 +4,7 @@ import React from 'react'
 import Accordion from '@/components/ui/Accordion'
 import HeroStatic from '@/components/ui/HeroStatic'
 import { motion } from 'framer-motion'
+import SimpleForm from '@/components/ui/SimpleForm'
 
 
 export default function MemberPage() {
@@ -66,23 +67,7 @@ export default function MemberPage() {
         
 
         {/* Sign Up */}
-        <div className='w-full mx-auto text-text flex flex-col items-center justify-center py-13 bg-[#CCB3E6]'>
-            <motion.h1 
-            initial={{opacity:0}}
-            whileInView={{opacity:1}}
-            transition={{duration:0.8}}
-            className='text-4xl font-bold mb-5 text-primary '> But first, we want to know who you are</motion.h1>
-
-        <motion.form className="w-[80%] rounded-3xl flex flex-col gap-1 justify-center bg-[#E6D9F3] shadow-lg py-10 px-10 backdrop-blur-md" action="">
-            <div className='p-5 flex flex-row gap-10 justify-center'>
-                <input type="text" placeholder="Enter your name" className="w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required " />
-                <input type="text" placeholder="Enter your Phone Number" className="w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required " />
-                <input type="text" placeholder="Enter your Email address" className='w-[33%] p-5 inset-shadow-sm inset-shadow-primary rounded-4xl required ' />
-            </div>
-            <button type='submit' className='w-[20%] mx-auto p-3 bg-primary text-bg rounded-3xl'>Submit</button>
-        </motion.form>
-        
-        </div>
+                <SimpleForm />
         
         </div>
     )
