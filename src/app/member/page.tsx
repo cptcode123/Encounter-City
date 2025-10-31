@@ -4,6 +4,7 @@ import React from 'react'
 import Accordion from '@/components/ui/Accordion'
 import HeroStatic from '@/components/ui/HeroStatic'
 import { motion } from 'framer-motion'
+import SimpleForm from '@/components/ui/SimpleForm'
 
 
 export default function MemberPage() {
@@ -66,47 +67,9 @@ export default function MemberPage() {
         
 
         {/* Sign Up */}
-        <div className="w-full mx-auto text-text flex flex-col items-center justify-center py-13 bg-[#CCB3E6]">
-  <motion.h1
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.8 }}
-    className="text-4xl font-bold mb-5 text-primary text-center"
-  >
-    But first, we want to know who you are
-  </motion.h1>
-
-  <motion.form
-    className="w-[90%] max-w-4xl rounded-3xl flex flex-col items-center bg-[#E6D9F3] shadow-lg py-10 px-6 backdrop-blur-md"
-    action=""
-  >
-    <div className="w-full flex flex-wrap justify-center gap-5 text-primary-dark">
-      <input
-        type="text"
-        placeholder="Name"
-        className="p-4 text-center rounded-full shadow-inner bg-[#F3E9FB] focus:outline-none focus:ring-2 focus:ring-primary w-full sm:w-[250px]"
-      />
-      <input
-        type="text"
-        placeholder="Phone"
-        className="p-4 text-center rounded-full shadow-inner bg-[#F3E9FB] focus:outline-none focus:ring-2 focus:ring-primary w-full sm:w-[250px]"
-      />
-      <input
-        type="text"
-        placeholder="Email"
-        className="p-4 text-center rounded-full shadow-inner bg-[#F3E9FB] focus:outline-none focus:ring-2 focus:ring-primary w-full sm:w-[250px]"
-      />
-    </div>
-
-    <button
-      type="submit"
-      className="mt-6 bg-primary text-bg px-6 py-2 rounded-full hover:bg-opacity-80 transition"
-    >
-      Submit
-    </button>
-  </motion.form>
-</div>
-        </div>  
+                <SimpleForm />
+        
+        </div>
     )
 
 }
