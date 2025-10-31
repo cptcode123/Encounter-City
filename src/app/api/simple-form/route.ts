@@ -1,5 +1,5 @@
 import { google } from "googleapis";
-import { email, z } from "zod";
+import { z } from "zod";
 
 const FormSchema = z.object({
     name: z.string().min(1, "Name is required"),
@@ -10,20 +10,20 @@ const FormSchema = z.object({
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const parsedData = FormSchema.safeParse(body);
+        const parsedData = FormSchema.parse(body);
 
-        if (!parsedData.success) {
+        if (!parsedData) {
             return new Response(
                 JSON.stringify({ error: "Invalid form data" }),
             );
     }
 
-    const { name, email, PhoneNumber } = parsedData.data;
+    const { name, email, PhoneNumber } = parsedData;
 
     const auth = new google.auth.GoogleAuth({
         credentials: {
-            client_email: process.env.GOOGLE_CLIENT_EMAIL,
-            private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+            client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+            private_key: process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, "\n"),
         },
         scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 
@@ -32,23 +32,18 @@ export async function POST(req: Request) {
     const sheets =  google.sheets({ version: "v4", auth });
 
     console.log("Attemption to append to sheet...");
-    console.log("Spreadsheet ID:" ,process.env.GOOGLE_SHEET_ID);
-
-    try {
+    console.log("Spreadsheet ID:" ,process.env.GOOGLE_SHEETS_ID);
         await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEETS_ID,
             range: "SimpleFormResponses!A:D",
             valueInputOption: "USER_ENTERED",
             requestBody: {
-                values: [[name, email, PhoneNumber, new Date().toLocaleString()]],
+                values: [[name, email, PhoneNumber, new Date().toString()]],
             },
         });
         console.log("Data successfully added to sheet!");
-    } catch (error) {
-        console.error("Sheets appended error:", error);
-    }
-
-    return new Response(JSON.stringify({ success: true }), { status: 200, statusText: "Form submitted successfully" });
+    return new Response(JSON.stringify({ success: true }), { status: 200});
+    
 } catch (err) {
     console.error("Error submitting form:", err);
     return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });

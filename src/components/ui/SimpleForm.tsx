@@ -10,6 +10,7 @@ const SimpleForm = () => {
     // Handle form submission
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
+        console.log("Submitting form:", form);
         setStatus("Submitting...");
 
         const res = await fetch("/api/simple-form", {
@@ -49,19 +50,21 @@ const SimpleForm = () => {
                 placeholder="Enter your name"
                 value={form.name}
                 onChange={(e) => setForm({...form, name: e.target.value})}
+                minLength={1}
                className="p-4 text-center rounded-full shadow-inner bg-[#F3E9FB] focus:outline-none focus:ring-2 focus:ring-primary w-full sm:w-[250px]" required />
 
 
                 <input 
-                type="text" 
+                type="tel" 
                 placeholder="Enter your Phone Number"
                 value={form.PhoneNumber}
                 onChange={(e) => setForm({...form, PhoneNumber: e.target.value})}
+                minLength={10}
                 className="p-4 text-center rounded-full shadow-inner bg-[#F3E9FB] focus:outline-none focus:ring-2 focus:ring-primary w-full sm:w-[250px]" required/>
 
 
                 <input 
-                type="text" 
+                type="email" 
                 placeholder="Enter your Email address"
                 value={form.email}
                 onChange={(e) => setForm({...form, email: e.target.value})}
