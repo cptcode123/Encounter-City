@@ -1,7 +1,5 @@
 "use client";
 
-import { Play } from "lucide-react";
-
 type ServiceCardProps = {
   title: string;
   image: string;
