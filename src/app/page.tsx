@@ -1,5 +1,4 @@
 'use client'
-import Image from "next/image";
 import HeroCarousel from "../components/ui/HeroCarousel";
 
 import Button from "@/components/ui/Button";
@@ -27,8 +26,8 @@ export default function Home() {
       
       {/* About Us section with CTA leading to about us page */}
       <section id="about-section" className="w-full bg-primary-dark bg-fixed py-20 mt-30">
-        <div className="w-[80%] flex flex-col md:flex-row gap-7 justify-between mx-auto px-10 min-w-48">
-          <div className="flex flex-col gap-8 w-full md:w-[50%] order-2" >
+        <div className="w-[80%] flex flex-col md:flex-row gap-4 justify-between mx-auto px-10 min-w-48">
+          <div className="flex flex-col gap-8 w-full md:w-[50%] order-2 self-center" >
             <h1 className="text-4xl font-bold text-white"> You are welcome here</h1>
             <p className="text-lg text-gray-300 text-wrap mb-3">At Encounter City, we believe in the transformative power of Christ love. Join us as we worship, learn, and grow together in faith.</p>
 
@@ -36,7 +35,7 @@ export default function Home() {
             
           </div>
           <div className="order-1 md:order-2">
-            <Image src="/rect-img-6.jpg" alt="" />
+            <img src="/rect-img-6.jpg" alt=""  id="about_img"/>
           </div>
         </div>
 

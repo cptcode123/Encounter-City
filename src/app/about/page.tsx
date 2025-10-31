@@ -1,7 +1,6 @@
 'use client'
 import HeroStatic from "@/components/ui/HeroStatic";
 import { Rocket, Eye, Church, HeartHandshake, PersonStanding, Heart } from "lucide-react";
-import Image from "next/image";
 
 
 export default function AboutPage() {
@@ -103,7 +102,7 @@ export default function AboutPage() {
                         {leadership.map(({name, role, image, bio}, key) => (
                             <div key={key} className="flex flex-col items-center justify-center gap-5">
                                 <div className="mx-auto my-2 p-6 bg-primary rounded-full shadow-2xl text-primary-dark border-8 border-primary-dark">
-                                    <Image src={image} alt={name} className="w-32 h-32 rounded-full"/>
+                                    <img src={image} alt={name} className="w-32 h-32 rounded-full"/>
                                 </div>
                                 <h3 className="text-2xl font-bold text-[#CCb3E6]">{name}</h3>
                                 <p className="text-lg text-[#CCb3E6]">{role}</p>

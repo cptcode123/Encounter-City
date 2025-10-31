@@ -22,7 +22,7 @@ export default async function SchoolOfTheSpiritPage() {
                 <p className="text-lg text-text text-center mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam atque, tempora temporibus vel optio omnis enim, cum inventore dignissimos iste deleniti incidunt quisquam a aperiam obcaecati, pariatur ex nostrum sint.</p>
                 
                 <div id='gallery' className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-                    {(await recordings).map((recording, index) => (
+                    {(recordings).map((recording, index) => (
                         <MediaCard key={index} title={recording.title} link={recording.link} />
                     ))}
 
