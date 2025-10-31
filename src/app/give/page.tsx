@@ -1,4 +1,5 @@
 'use client'    
+import CreditCard from "@/components/ui/CreditCard";
 import HeroStatic from "@/components/ui/HeroStatic";
 import React from "react"
 
@@ -11,19 +12,14 @@ export default function GivePage() {
             </div>
 
                 <div className="flex flex-col justify-center mx-auto w-full my-4">
-                    <h1 className="text-primary text-bold text-5xl text-center">
+                    <h1 className="text-primary text-bold text-5xl text-center mb-10 my-5">
                         It takes a lot to do this work
                     </h1>
 
-                    <p className="text-primary-dark text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus deserunt reiciendis excepturi totam! Id ab, nisi maiores ea, inventore asperiores sint eaque dolore qui officiis velit debitis nobis beatae perferendis?</p>
+                    <p className="text-primary-dark text-center w-[75%] mx-auto">If you do feel like helping, you can transfer directly with the information below</p>
 
-                    <div className="rounded-2xl shadow-lg text-white bg-primary flex flex-col gap-1 p-4 w-[40%] mx-auto my-10">
-                        <h1>Account Number</h1>
-                        <h2>123456789</h2>
+                    <CreditCard />
 
-                        <h1>Bank Name</h1>
-                        <h2>Access Bank</h2>
-                    </div>
                 </div>
             </div>
     )
