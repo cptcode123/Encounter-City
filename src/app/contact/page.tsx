@@ -1,7 +1,8 @@
 'use client'
 import { motion } from "framer-motion";
-import { House, Phone, Mail } from "lucide-react";
+import { House, Phone, Mail, Contact } from "lucide-react";
 import HeroStatic from "@/components/ui/HeroStatic";
+import ContactForm from "@/components/ui/ContactForm";
 
 
 
@@ -58,42 +59,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Contact Form */}
-                <div className="flex flex-col order-2  bg-primary w-full  mx-auto rounded-2xl shadow-lg p-6"> 
-                    <h1 className="text-3xl text-white font-bold pl-6 mb-10 text-center">Send us a Message</h1>
-                <motion.form className="space-y-6 order-1 bg-bg p-6 rounded-xl " id="send"
-                initial={{opacity:0, y:-20}}
-                whileInView={{opacity:1, y:0}}
-                transition={{duration:0.8}}>
-                    <div className="grid grid-col-1 md:grid-cols-2 gap-4">
-                    <input 
-                    type="text"
-                    placeholder="Your Name" 
-                    required
-                    className="w-full p-3 rounded-md text-text inset-shadow-sm dark:inset-shadow-primary-dark"/>
-                     <input
-                    type="email"
-                    placeholder="Your Email"
-                    required
-                    className="w-full p-3 rounded-md text-text inset-shadow-sm dark:inset-shadow-primary-dark"
-                />
-                </div>
-                <input
-                    type="text"
-                    placeholder="Subject"
-                    className="w-full p-3 rounded-md inset-shadow-sm dark:inset-shadow-primary-dark"
-                />
-                <textarea
-                    placeholder="Message"
-                    rows={5}
-                    required
-                    className="w-full p-3 rounded-md inset-shadow-sm dark:inset-shadow-primary-dark"
-                />
-                <button type='submit'></button>
-
-
-
-                </motion.form>
-                </div>
+                <ContactForm />
             </section>
 
 
