@@ -40,12 +40,13 @@ const Header = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1}}
                 exit={{ opacity: 0}}
-                className="lg:hidden bg-surface text-primary flex flex-col gap-5 px-6 py-4 absolute top-15 left-0 right-0 z-20">
+                className="lg:hidden bg-white text-primary flex flex-col gap-5 px-6 py-4 absolute top-15 left-0 right-0 z-20">
                 <Link href="/about" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>About Us</Link>
                 <Link href="/blog" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}> Words from our Pastor</Link>
                 <Link href="/services" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>Services</Link>
                 <Link href="/contact" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>Get in touch</Link>
                 <Link href="/give" className="hover:text-secondary-dark" onClick={() => setIsOpen(false)}>Give</Link>
+                 <Link href='https://theencountercity.mixlr.com/' className="hover:text-secondary-dark" target="_blank">Listen to us Live</Link>
                 </motion.nav>
             )}
         </AnimatePresence>        
