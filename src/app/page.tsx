@@ -1,11 +1,55 @@
-'use client'
 import HeroCarousel from "../components/ui/HeroCarousel";
-
 import Button from "@/components/ui/Button";
 import NewsCarousel from "@/components/ui/NewsCarousel";
-import { churchNews } from '../../lib/news'
+import { client } from "../sanity/lib/client";
+import { newsPostsQuery } from "../../lib/queries";
+import { urlFor } from "../sanity/lib/image";
 
-export default function Home() {
+export const revalidate = 60; // Revalidate this page every 60 seconds
+
+type NewsPost = {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  publishedAt: string;
+  mainImage?: {
+    asset: {
+      _id: string;
+      url: string;
+    };
+    alt?: string;
+  };
+  excerpt?: string;
+  authorName?: string;
+  categories?: string[];
+};
+
+type NewsCard = {
+  id: number;
+  title: string;
+  excerpt: string;
+  image: string;
+  slug: string;
+};
+
+export default async function Home() {
+  // Fetch news posts from Sanity
+  const newsPosts = await client.fetch<NewsPost[]>(newsPostsQuery) || [];
+  
+  // Transform Sanity posts to NewsCard format
+  const newsCards: NewsCard[] = newsPosts
+    .filter((post) => post && post.slug && post.slug.current) // Filter out invalid posts
+    .map((post, index) => ({
+      id: index + 1,
+      title: post.title || "Untitled",
+      excerpt: post.excerpt || "",
+      image: post.mainImage 
+        ? urlFor(post.mainImage).width(800).height(600).url() 
+        : "/rect-img-5.jpg", // fallback image
+      slug: post.slug.current,
+    }));
   return (
     <>
       <HeroCarousel slides={[ 
@@ -46,7 +90,7 @@ export default function Home() {
         <h1 className="mt-5 text-3xl font-bold text-primary-dark"> Here is what we have been up to</h1>
 
         <div className="w-full mx-auto my-10 bg-gray-300 pb-10">
-          <NewsCarousel cards={churchNews} />
+          <NewsCarousel cards={newsCards} />
         </div>
 
       </section>
