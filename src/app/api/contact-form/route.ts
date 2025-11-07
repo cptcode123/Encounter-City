@@ -1,6 +1,5 @@
 import { google } from "googleapis";
 import { z } from "zod";
-import { ca } from "zod/locales";
 
 const FormSchema = z.object({
     name: z.string().min(1, "Name is required"),

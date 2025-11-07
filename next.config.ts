@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'cdn.sanity.io' },
     ],
   },
+  // Transpile Sanity packages for proper bundling
+  transpilePackages: ['next-sanity', 'sanity'],
 };
 
 export default nextConfig;

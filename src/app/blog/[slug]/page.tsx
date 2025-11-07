@@ -1,8 +1,8 @@
-import  { client } from '@/sanity/lib/client';
+import  { client } from '../../../sanity/lib/client';
 import  {groq} from 'next-sanity';
 import Image from 'next/image';
-import { PortableText } from 'next-sanity';
-import { urlFor } from '../../../../lib/sanity.image';
+import { PortableText, type PortableTextBlock } from '@portabletext/react';
+import { urlFor } from '../../../sanity/lib/image';
 import { portableTextComponents } from '../../../../lib/portableText';
 
 const query = groq`
@@ -16,8 +16,25 @@ publishedAt,
 }
 `;
 
-export default async function BlogPost({params }: { params: { slug:string} }) {
-    const post = await client.fetch(query, {slug: params.slug});
+// Type definition for blog post detail
+type BlogPostDetail = {
+    _id: string;
+    title: string;
+    mainImage?: {
+        asset: {
+            _id: string;
+            url: string;
+        };
+        alt?: string;
+    };
+    body: PortableTextBlock[]; // PortableText content
+    publishedAt: string;
+    author?: string;
+};
+
+export default async function BlogPost({params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const post = await client.fetch<BlogPostDetail>(query, {slug});
 
     if (!post) {
         return <div className="text-center py-20">Post not found</div>
@@ -38,7 +55,7 @@ export default async function BlogPost({params }: { params: { slug:string} }) {
 
       <h1 className="text-4xl font-bold mb-2">{post.title}</h1>
       <p className="text-gray-500 mb-8">
-        By {post.author} • {new Date(post.publishedAt).toLocaleDateString()}
+        {post.author && `By ${post.author}`} • {new Date(post.publishedAt).toLocaleDateString()}
       </p>
 
       <div className="prose prose-lg max-w-none">

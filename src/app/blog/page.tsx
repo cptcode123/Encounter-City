@@ -1,16 +1,34 @@
-import { client } from "@/sanity/lib/client";
+import { client } from "../../sanity/lib/client";
 import { allPostsQuery } from "@/../lib/queries";
 import React from "react"
 import HeroStatic from "@/components/ui/HeroStatic";
 import Link from "next/link";
 import Image from "next/image";
-import { urlFor } from "../../../lib/sanity.image";
+import { urlFor } from "../../sanity/lib/image";
 export const revalidate = 60; // Revalidate this page every 60 seconds
 
-
+// Type definition for blog post based on the query structure
+type BlogPost = {
+    _id: string;
+    title: string;
+    slug: {
+        current: string;
+    };
+    publishedAt: string;
+    mainImage?: {
+        asset: {
+            _id: string;
+            url: string;
+        };
+        alt?: string;
+    };
+    excerpt?: string;
+    authorName?: string;
+    categories?: string[];
+};
 
 export default  async function Blog() {
-    const posts = await client.fetch(allPostsQuery);
+    const posts = await client.fetch<BlogPost[]>(allPostsQuery);
 
     return (
         <div>
@@ -24,13 +42,13 @@ export default  async function Blog() {
                             Our Blog
                         </h1>
                         <div className="grid md:grid-cols gap-8">
-                            {posts.map((post:any) => (
+                            {posts.map((post) => (
                                 <Link href={`/blog/${post.slug.current}`} key={post._id} className="rounded-xl overflow-hidden bg-white shadow hover:shadow-lg transition-all duration-300">
                                     {post.mainImage && (
                                         <div className=" relative w-full h-56">
                                             <Image
                                             src={urlFor(post.mainImage).width(800).height(600).url()}
-                                            alt={post.mainImage.alt}
+                                            alt={post.mainImage.alt || post.title}
                                             fill
                                             className="object-cover"
                                             />
@@ -42,7 +60,7 @@ export default  async function Blog() {
                                             {post.excerpt}
                                         </p>
                                         <p className="text-xs text-gray-400">
-                                            {new Date(post.publishedAt).toLocaleDateString()} • {post.author}
+                                            {new Date(post.publishedAt).toLocaleDateString()}{post.authorName && ` • ${post.authorName}`}
                                         </p>
                                     </div>
                                     

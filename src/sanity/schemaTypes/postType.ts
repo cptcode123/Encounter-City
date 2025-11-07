@@ -1,6 +1,5 @@
 import {DocumentTextIcon} from '@sanity/icons'
 import {defineArrayMember, defineField, defineType} from 'sanity'
-import { da } from 'zod/locales'
 
 export const postType = defineType({
   name: 'post',
