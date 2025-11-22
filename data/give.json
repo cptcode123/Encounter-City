@@ -1,0 +1,18 @@
+{
+  "hero": {
+    "title": "Give",
+    "subtitle": "Support the mission and vision of The Encounter City Christian Centre",
+    "image": "/rect-img-6.jpg"
+  },
+  "content": {
+    "heading": "It takes a lot to do this work",
+    "description": "If you do feel like helping, you can transfer directly with the information below"
+  },
+  "bankDetails": {
+    "bankName": "Access Bank",
+    "accountNumber": "1234 5678 9012 3456",
+    "accountHolder": "The Encounter City",
+    "validThru": "Kingdom Come"
+  }
+}
+

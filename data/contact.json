@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Get in Touch with Us",
+    "subtitle": "Whether you have a question, prayer request, or want to visit, we're here for you",
+    "image": "/rect-img-1.jpg"
+  },
+  "contactInfo": {
+    "title": "Contact Information",
+    "address": {
+      "text": "Hotel Ibis Royale, Ajao Estate, Lagos, Nigeria",
+      "icon": "House"
+    },
+    "email": {
+      "text": "theencountercity@gmail.com",
+      "href": "mailto:theencountercity@gmail.com",
+      "icon": "Mail"
+    },
+    "phone": {
+      "text": "+234 800 000 0000",
+      "href": "tel:+2348000000000",
+      "icon": "Phone"
+    }
+  },
+  "map": {
+    "src": "https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Hotel Ibis Royal Ajao Estate&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+  }
+}
+

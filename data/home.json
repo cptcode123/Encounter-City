@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "slides": [
+      {
+        "title": "Welcome to The Encounter City Christian Center",
+        "subtitle": "Where lives are transformed in Christ's presence.",
+        "image": "/landscape-1.jpg"
+      },
+      {
+        "title": "Worship. Word. Encounter.",
+        "subtitle": "Join us in vibrant worship and deep teaching.",
+        "image": "/landscape-2.jpg"
+      },
+      {
+        "title": "A Family in Christ",
+        "subtitle": "Experience love, growth, and community.",
+        "image": "/rect-img-6.jpg"
+      }
+    ]
+  },
+  "aboutSection": {
+    "title": "You are welcome here",
+    "description": "At Encounter City, we believe in the transformative power of Christ love. Join us as we worship, learn, and grow together in faith.",
+    "image": "/rect-img-6.jpg",
+    "buttonText": "Join our Family",
+    "buttonHref": "/member"
+  },
+  "newsSection": {
+    "title": "Here is what we have been up to"
+  },
+  "communitySection": {
+    "title": "We are a community",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, asperiores assumenda. Facere ut ad pariatur sint animi quibusdam, sequi mollitia veritatis dolores culpa? Quaerat voluptatem, rerum magnam facere libero quam.",
+    "backgroundImage": "/rect-img-1.jpg",
+    "buttonText": "Join our Community",
+    "buttonHref": "/member"
+  },
+  "liveSection": {
+    "title": "We are Live...",
+    "services": [
+      {
+        "text": "On Sundays: 9:00AM - 12:00PM",
+        "href": "/service/encounter-service"
+      },
+      {
+        "text": "On Tuesdays: 6:00PM - 8:00PM",
+        "href": "/services/school-of-the-spirit"
+      },
+      {
+        "text": "Every Monday and Friday Morning: 6:00AM-8:00AM",
+        "href": "/services/a-time-to-contend"
+      }
+    ]
+  }
+}
+
