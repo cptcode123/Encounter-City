@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "title": "Thinking about becoming a member?",
+    "subtitle": "Here's the roadmap",
+    "image": "/rect-img-5.jpg"
+  },
+  "content": {
+    "title": "Here is what you need to know",
+    "description": "Membership at Encounter City is more than just a title; it is a commitment to grow, serve, and belong. As a member, you will have the opportunity to deepen your faith, connect with a supportive community, and actively participate in the life and mission of our church.\n\nHere are the steps you need to take to become one of us."
+  },
+  "classes": [
+    {
+      "title": "Class 1",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam accusantium veritatis corrupti, quidem natus ipsam architecto minima reiciendis, facere, quam esse sequi fugiat ullam odit ipsum dolor aspernatur necessitatibus."
+    },
+    {
+      "title": "Class 2",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam accusantium veritatis corrupti, quidem natus ipsam architecto minima reiciendis, facere, quam esse sequi fugiat ullam odit ipsum dolor aspernatur necessitatibus."
+    },
+    {
+      "title": "Class 3",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam accusantium veritatis corrupti, quidem natus ipsam architecto minima reiciendis, facere, quam esse sequi fugiat ullam odit ipsum dolor aspernatur necessitatibus."
+    },
+    {
+      "title": "Class 4",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam accusantium veritatis corrupti, quidem natus ipsam architecto minima reiciendis, facere, quam esse sequi fugiat ullam odit ipsum dolor aspernatur necessitatibus."
+    },
+    {
+      "title": "Class 5",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam accusantium veritatis corrupti, quidem natus ipsam architecto minima reiciendis, facere, quam esse sequi fugiat ullam odit ipsum dolor aspernatur necessitatibus."
+    }
+  ]
+}
+

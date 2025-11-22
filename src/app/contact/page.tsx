@@ -3,15 +3,33 @@ import { motion } from "framer-motion";
 import { House, Phone, Mail, Contact } from "lucide-react";
 import HeroStatic from "@/components/ui/HeroStatic";
 import ContactForm from "@/components/ui/ContactForm";
+import { getPageData } from "../../../lib/data";
+import { useEffect, useState } from "react";
 
-
+const iconMap: Record<string, any> = {
+    House,
+    Phone,
+    Mail,
+    Contact,
+};
 
 export default function ContactPage() {
+    const [pageData, setPageData] = useState<any>(null);
+
+    useEffect(() => {
+        getPageData('contact').then(setPageData);
+    }, []);
+
+    if (!pageData) return null;
+
+    const AddressIcon = iconMap[pageData.contactInfo.address.icon];
+    const EmailIcon = iconMap[pageData.contactInfo.email.icon];
+    const PhoneIcon = iconMap[pageData.contactInfo.phone.icon];
 
     return (
         <div className="min-h-screen bg-bg text-text w-full">
             {/* Hero Section */}
-            <HeroStatic image="/rect-img-1.jpg" title="Get in Touch with Us" subtitle="Whether you have a question, prayer request, or want to visit, we're here for you"/>
+            <HeroStatic image={pageData.hero.image} title={pageData.hero.title} subtitle={pageData.hero.subtitle}/>
             {/* Contact Info + Form */}
             <section className="flex flex-col gap-12 max-w-6xl mx-auto px-6 py-12">
 
@@ -23,15 +41,15 @@ export default function ContactPage() {
                     whileInView={{opacity:1, y:0}}
                     transition={{duration:0.8}}
                     >
-                    <h1 className="text-3xl font-bold mb-6">Contact Information</h1>
+                    <h1 className="text-3xl font-bold mb-6">{pageData.contactInfo.title}</h1>
                     </motion.div>
                     <motion.div
                     initial={{opacity:0, y:-20}}
                     whileInView={{opacity:1, y:0}}
                     transition={{duration:0.8}}
                     className="flex items-center gap-2 text-3xl text-wrap">
-                        <House className="w-15 h-15 text-primary shrink-0" />
-                        <span>Hotel Ibis Royale, Ajao Estate, Lagos, Nigeria</span>
+                        <AddressIcon className="w-15 h-15 text-primary shrink-0" />
+                        <span>{pageData.contactInfo.address.text}</span>
                     </motion.div>
 
                 <motion.div
@@ -39,9 +57,9 @@ export default function ContactPage() {
                     whileInView={{opacity:1, y:0}}
                     transition={{duration:0.8}}
                     className="flex items-center gap-2 text-3xl text-wrap">
-                    <Mail className="w-15 h-15 text-primary shrink-0" />
-                    <a href="mailto:theencountercity@gmail.com" className="hover:text-primary-dark wrap-anywhere">
-                    theencountercity@gmail.com
+                    <EmailIcon className="w-15 h-15 text-primary shrink-0" />
+                    <a href={pageData.contactInfo.email.href} className="hover:text-primary-dark wrap-anywhere">
+                    {pageData.contactInfo.email.text}
                     </a>
                 </motion.div>
 
@@ -50,9 +68,9 @@ export default function ContactPage() {
                     whileInView={{opacity:1, y:0}}
                     transition={{duration:0.8}}
                     className="flex items-center gap-2 text-3xl text-wrap">
-                    <Phone className="w-15 h-15 text-primary shrink-0" />
-                    <a href="tel:+2348000000000" className="hover:text-primary-dark">
-                    +234 800 000 0000
+                    <PhoneIcon className="w-15 h-15 text-primary shrink-0" />
+                    <a href={pageData.contactInfo.phone.href} className="hover:text-primary-dark">
+                    {pageData.contactInfo.phone.text}
                     </a>
                 </motion.div>
 
@@ -66,7 +84,7 @@ export default function ContactPage() {
             {/* Google Map */}
             <div className="mapouter relative text-center w-full h-[400px] flex justify-center">
                 <div className="gmap_canvas overflow-hidden bg-none w-full h-[400px]">
-                    <iframe className="gmap_iframe w-full h-[400px]" frameBorder={0} marginHeight={0} marginWidth={0} src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Hotel Ibis Royal Ajao Estate&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                    <iframe className="gmap_iframe w-full h-[400px]" frameBorder={0} marginHeight={0} marginWidth={0} src={pageData.map.src}></iframe>
                 </div>
             </div>
         </div>

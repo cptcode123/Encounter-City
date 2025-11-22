@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title": "About Us",
+    "subtitle": "Learn more about The Encounter City Christian Centre",
+    "image": "/landscape-2.jpg"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quaerat nobis assumenda tempora voluptas ut iusto quidem qui animi? Illum, odit. Iusto quidem sunt quod dolor distinctio consequatur perspiciatis consectetur.",
+    "icon": "Rocket"
+  },
+  "vision": {
+    "title": "Our Vision",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque harum assumenda, doloribus ab nobis nesciunt id animi necessitatibus labore omnis sit adipisci, delectus et aliquid laudantium est porro pariatur. Temporibus!",
+    "icon": "Eye"
+  },
+  "ministry": {
+    "title": "Our Ministry",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque harum assumenda, doloribus ab nobis nesciunt id animi necessitatibus labore omnis sit adipisci, delectus et aliquid laudantium est porro pariatur. Temporibus!",
+    "icon": "Church"
+  },
+  "coreValues": {
+    "title": "Our Core Values",
+    "values": [
+      {
+        "name": "Love God",
+        "icon": "Heart"
+      },
+      {
+        "name": "Love people",
+        "icon": "PersonStanding"
+      },
+      {
+        "name": "Service to others",
+        "icon": "HeartHandshake"
+      }
+    ]
+  },
+  "leadership": {
+    "title": "Our Leadership",
+    "leaders": [
+      {
+        "name": "Pastor John Doe",
+        "role": "Lead Pastor",
+        "image": "/leader1.jpg",
+        "bio": "John has been leading our church for over 10 years with a passion for community and faith."
+      },
+      {
+        "name": "Pastor Jane Smith",
+        "role": "Associate Pastor",
+        "image": "/leader2.jpg",
+        "bio": "Jane is dedicated to youth ministry and helping the next generation grow in their faith."
+      },
+      {
+        "name": "Elder Mike Johnson",
+        "role": "Church Elder",
+        "image": "/leader3.jpg",
+        "bio": "Mike has been a guiding presence in our church for many years, offering wisdom and support to both leaders and congregants."
+      }
+    ]
+  }
+}
+

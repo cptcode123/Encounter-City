@@ -1,42 +1,27 @@
 'use client'
 import HeroStatic from "@/components/ui/HeroStatic"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { ServiceCard } from "@/components/ui/Card"
+import { getPageData } from "../../../lib/data"
 
 
 
 export default function MinistryPage() {
+    const [pageData, setPageData] = useState<any>(null);
 
-    const services = [
-        {
-            title: "Encounter God Service",
-            subtitle: "Weekly Sunday Worship and Teaching",
-            description: "Join us every Sunday at 9 AM for a powerful time of worship, teaching, and encountering the presence of God. Our services are designed to inspire and equip you for your spiritual journey.",
-            img: "/logo-purple.jpg",
-            href: "/services/encounter-service",
-        },
-        {
-            title: "School of the Spirit",
-            subtitle: "Deepen Your Spiritual Walk on Tuesdays",
-            description: "Join us every Tuesday at 6 PM for an immersive experience in the Word and Spirit. This service is designed to help you grow in your faith and understanding of God's voice.",
-            img: "/school-of-spirit.jpg",
-            href: "/services/school-of-the-spirit",
-        },
-        {
-            title: "Encounter Room & A Time to Contend",
-            subtitle: "Prayer and the word on Tuesdays and Fridays",
-            description: "Join us every Tuesday and Friday at 6am for a dedicated time of intercessory prayer. This service is focused on seeking God's intervention and breakthrough in our lives and communities.",
-            img: "/encounter-room.jpg",
-            href: "/services/a-time-to-contend",
-        }
-    ];
+    useEffect(() => {
+        getPageData('services').then(setPageData);
+    }, []);
 
+    if (!pageData) return null;
+
+    const services = pageData.services;
 
     return (
         <div>
             {/* Hero */}
-            <HeroStatic title="Our Services" subtitle='Discover what the Lord has enabled us to offer' image='/landscape-1.jpg'/>
+            <HeroStatic title={pageData.hero.title} subtitle={pageData.hero.subtitle} image={pageData.hero.image}/>
 
             {/* Section Grid */}
             <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -47,13 +32,13 @@ export default function MinistryPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        Our Services
+                        {pageData.sectionTitle}
                     </motion.h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Service Cards */}
-                    {services.map((service, index) => (
+                    {services.map((service: any, index: number) => (
                         <ServiceCard
                             key={index}
                             title={service.title}

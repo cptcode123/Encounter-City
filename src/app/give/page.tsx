@@ -1,24 +1,26 @@
-'use client'    
 import CreditCard from "@/components/ui/CreditCard";
 import HeroStatic from "@/components/ui/HeroStatic";
 import React from "react"
+import { getPageData } from "../../../lib/data";
 
 
-export default function GivePage() {
+export default async function GivePage() {
+    const pageData = await getPageData('give');
+    
     return (
         <div>
             <div className="w-full">
-                <HeroStatic title="Give" subtitle='Support the mission and vision of The Encounter City Christian Centre' image='/rect-img-6.jpg'/>
+                <HeroStatic title={pageData.hero.title} subtitle={pageData.hero.subtitle} image={pageData.hero.image}/>
             </div>
 
                 <div className="flex flex-col justify-center mx-auto w-full my-4">
                     <h1 className="text-primary text-bold text-5xl text-center mb-10 my-5">
-                        It takes a lot to do this work
+                        {pageData.content.heading}
                     </h1>
 
-                    <p className="text-primary-dark text-center w-[75%] mx-auto">If you do feel like helping, you can transfer directly with the information below</p>
+                    <p className="text-primary-dark text-center w-[75%] mx-auto">{pageData.content.description}</p>
 
-                    <CreditCard />
+                    <CreditCard bankDetails={pageData.bankDetails} />
 
                 </div>
             </div>
