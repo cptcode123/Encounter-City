@@ -10,9 +10,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ text, inverted = false, href }) => {
   return (
-    <motion.a
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+    <a
       href={href}
       className={`
         px-6 py-2 rounded-3xl font-medium transition-colors duration-300 shadow-sm text-center text-nowrap
@@ -22,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({ text, inverted = false, href }) => {
       `}
     >
       {text}
-    </motion.a>
+    </a>
   );
 };
 

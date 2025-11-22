@@ -20,27 +20,39 @@ interface Props {
 export default function NewsCarousel({ cards }: Props) {
   const [index, setIndex] = useState(0);
 
+  // Early return if no cards
+  if (!cards || cards.length === 0) {
+    return (
+      <div className="w-full flex items-center justify-center py-20">
+        <p className="text-gray-500">No news posts available at this time.</p>
+      </div>
+    );
+  }
+
   const prev = () => setIndex((i) => (i - 1 + cards.length) % cards.length);
   const next = () => setIndex((i) => (i + 1) % cards.length);
 
-  // visible cards
+  // visible cards - filter out undefined values
   const visibleDesktop = [
     cards[(index - 1 + cards.length) % cards.length], // left
     cards[index], // center
     cards[(index + 1) % cards.length], // right
-  ];
-  const visibleMobile = [cards[index]];
+  ].filter((card) => card !== undefined);
+  
+  const visibleMobile = cards[index] ? [cards[index]] : [];
 
   return (
     <div className="relative w-full flex items-center justify-center">
-      {/* Left Button */}
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        onClick={prev}
-        className="absolute left-2 md:left-8 z-20 p-2 md:p-3 rounded-full bg-gray-100/80 hover:bg-gray-200 shadow"
-      >
-        <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
-      </motion.button>
+      {/* Left Button - only show if more than 1 card */}
+      {cards.length > 1 && (
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          onClick={prev}
+          className="absolute left-2 md:left-8 z-20 p-2 md:p-3 rounded-full bg-gray-100/80 hover:bg-gray-200 shadow"
+        >
+          <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
+        </motion.button>
+      )}
 
       {/* Cards */}
       <div className="flex items-center justify-center space-x-0 md:space-x-6 h-[22rem] md:h-[26rem] w-full px-10 md:px-20">
@@ -76,6 +88,7 @@ export default function NewsCarousel({ cards }: Props) {
         {/* Desktop: 3 cards */}
         <div className="hidden md:flex items-center justify-center space-x-6">
           {visibleDesktop.map((card, i) => {
+            if (!card) return null;
             const isCenter = i === 1;
             const scale = isCenter ? 1 : 0.85;
             const blur = isCenter
@@ -96,12 +109,12 @@ export default function NewsCarousel({ cards }: Props) {
                 <Image
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-32 md:h-40 object-cover relative"
+                  className="w-full h-60 md:h-60 object-cover relative"
                   width={60}
                   height={60}
                 />
                 <div className="p-4">
-                  <h3 className="font-bold text-lg">{card.title}</h3>
+                  <h3 className="font-bold text-lg mb-4">{card.title}</h3>
                   <p className="text-sm text-gray-600 line-clamp-3">
                     {card.excerpt}
                   </p>
@@ -113,14 +126,16 @@ export default function NewsCarousel({ cards }: Props) {
         </div>
       </div>
 
-      {/* Right Button */}
-      <motion.button
-      whileHover={{ scale: 1.1 }}
-        onClick={next}
-        className="absolute right-2 md:right-8 z-20 p-2 md:p-3 rounded-full bg-gray-100/80 hover:bg-gray-200 shadow"
-      >
-        <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
-      </motion.button>
+      {/* Right Button - only show if more than 1 card */}
+      {cards.length > 1 && (
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          onClick={next}
+          className="absolute right-2 md:right-8 z-20 p-2 md:p-3 rounded-full bg-gray-100/80 hover:bg-gray-200 shadow"
+        >
+          <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
+        </motion.button>
+      )}
     </div>
   );
 }
