@@ -3,15 +3,18 @@ import HeroStatic from "@/components/ui/HeroStatic"
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { ServiceCard } from "@/components/ui/Card"
-import { getPageData } from "../../../lib/data"
+import { ServicesPageData, ServiceItem } from "../../../lib/types"
 
 
 
 export default function MinistryPage() {
-    const [pageData, setPageData] = useState<any>(null);
+    const [pageData, setPageData] = useState<ServicesPageData | null>(null);
 
     useEffect(() => {
-        getPageData('services').then(setPageData);
+        fetch('/api/content?page=services')
+            .then(res => res.json())
+            .then(setPageData)
+            .catch(err => console.error('Failed to fetch page data:', err));
     }, []);
 
     if (!pageData) return null;
@@ -38,7 +41,7 @@ export default function MinistryPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Service Cards */}
-                    {services.map((service: any, index: number) => (
+                    {services.map((service: ServiceItem, index: number) => (
                         <ServiceCard
                             key={index}
                             title={service.title}

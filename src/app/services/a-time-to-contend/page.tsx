@@ -3,10 +3,11 @@ import HeroStatic from "@/components/ui/HeroStatic"
 import MediaCard from "@/components/ui/MediaCard"
 import { fetchRecordingsByKeyword } from "../../../../lib/mixlr"
 import { getPageData } from "../../../../lib/data"
+import { ServicePageData } from "../../../../lib/types"
 
 
 export default async function EncounterServicePage() {
-    const pageData = await getPageData('a-time-to-contend');
+    const pageData = await getPageData<ServicePageData>('a-time-to-contend');
     const feedUrl = "https://apicdn.mixlr.com/rss-feeds/3017"
 
     const recordings = fetchRecordingsByKeyword(feedUrl,"contend")

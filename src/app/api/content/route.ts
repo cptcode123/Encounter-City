@@ -15,7 +15,7 @@ export async function GET(request: Request) {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const data = JSON.parse(fileContents);
     return NextResponse.json(data);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Page not found' }, { status: 404 });
   }
 }

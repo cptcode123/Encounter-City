@@ -1,8 +1,9 @@
 import HeroStatic from "@/components/ui/HeroStatic";
 import { Rocket, Eye, Church, HeartHandshake, PersonStanding, Heart } from "lucide-react";
 import { getPageData } from "../../../lib/data";
+import { AboutPageData, IconComponent, CoreValue } from "../../../lib/types";
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, IconComponent> = {
     Rocket,
     Eye,
     Church,
@@ -12,9 +13,9 @@ const iconMap: Record<string, any> = {
 };
 
 export default async function AboutPage() {
-    const pageData = await getPageData('about');
+    const pageData = await getPageData<AboutPageData>('about');
 
-    const values = pageData.coreValues.values.map((value: any) => ({
+    const values = pageData.coreValues.values.map((value: CoreValue) => ({
         name: value.name,
         icon: iconMap[value.icon],
     }));

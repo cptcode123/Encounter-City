@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { House, Phone, Mail, Contact } from "lucide-react";
 import HeroStatic from "@/components/ui/HeroStatic";
 import ContactForm from "@/components/ui/ContactForm";
-import { getPageData } from "../../../lib/data";
 import { useEffect, useState } from "react";
+import { ContactPageData, IconComponent } from "../../../lib/types";
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, IconComponent> = {
     House,
     Phone,
     Mail,
@@ -14,10 +14,13 @@ const iconMap: Record<string, any> = {
 };
 
 export default function ContactPage() {
-    const [pageData, setPageData] = useState<any>(null);
+    const [pageData, setPageData] = useState<ContactPageData | null>(null);
 
     useEffect(() => {
-        getPageData('contact').then(setPageData);
+        fetch('/api/content?page=contact')
+            .then(res => res.json())
+            .then(setPageData)
+            .catch(err => console.error('Failed to fetch page data:', err));
     }, []);
 
     if (!pageData) return null;

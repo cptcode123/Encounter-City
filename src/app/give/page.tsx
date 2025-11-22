@@ -2,10 +2,11 @@ import CreditCard from "@/components/ui/CreditCard";
 import HeroStatic from "@/components/ui/HeroStatic";
 import React from "react"
 import { getPageData } from "../../../lib/data";
+import { GivePageData } from "../../../lib/types";
 
 
 export default async function GivePage() {
-    const pageData = await getPageData('give');
+    const pageData = await getPageData<GivePageData>('give');
     
     return (
         <div>

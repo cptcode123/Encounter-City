@@ -4,11 +4,12 @@ import HeroStatic from "@/components/ui/HeroStatic"
 import { fetchRecordingsByKeyword } from "../../../../lib/mixlr"
 import MediaCard from "@/components/ui/MediaCard"
 import { getPageData } from "../../../../lib/data"
+import { ServicePageData } from "../../../../lib/types"
 
 
 
 export default async function SchoolOfTheSpiritPage() {
-    const pageData = await getPageData('school-of-the-spirit');
+    const pageData = await getPageData<ServicePageData>('school-of-the-spirit');
     const feedUrl = 'https://apicdn.mixlr.com/rss-feeds/3017'
 
     const recordings = await fetchRecordingsByKeyword(feedUrl, 'school')

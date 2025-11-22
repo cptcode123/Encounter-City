@@ -5,14 +5,17 @@ import Accordion from '@/components/ui/Accordion'
 import HeroStatic from '@/components/ui/HeroStatic'
 import { motion } from 'framer-motion'
 import SimpleForm from '@/components/ui/SimpleForm'
-import { getPageData } from '../../../lib/data'
+import { MemberPageData } from '../../../lib/types'
 
 
 export default function MemberPage() {
-    const [pageData, setPageData] = useState<any>(null);
+    const [pageData, setPageData] = useState<MemberPageData | null>(null);
 
     useEffect(() => {
-        getPageData('member').then(setPageData);
+        fetch('/api/content?page=member')
+            .then(res => res.json())
+            .then(setPageData)
+            .catch(err => console.error('Failed to fetch page data:', err));
     }, []);
 
     if (!pageData) return null;
@@ -52,7 +55,7 @@ export default function MemberPage() {
             whileInView={{opacity:1, y:0}}
             transition={{duration: 0.8, delay:0.5}}
             className='w-[80%] mx-auto flex flex-col justify-center gap-4 bg-surface'>
-                {classes.map(({ title, description }: any, idx: number) => (
+                {classes.map(({ title, description }, idx: number) => (
                     
                     <Accordion key={idx} title={title}>
                         <h2 className='text-xl font-bold mb-5'>This is {title}</h2>

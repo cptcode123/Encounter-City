@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "../../sanity/lib/image";
 import { getPageData } from "../../../lib/data";
+import { BlogPageData } from "../../../lib/types";
 export const revalidate = 60; // Revalidate this page every 60 seconds
 
 // Type definition for blog post based on the query structure
@@ -29,7 +30,7 @@ type BlogPost = {
 };
 
 export default  async function Blog() {
-    const pageData = await getPageData('blog');
+    const pageData = await getPageData<BlogPageData>('blog');
     const posts = await client.fetch<BlogPost[]>(allPostsQuery);
 
     return (

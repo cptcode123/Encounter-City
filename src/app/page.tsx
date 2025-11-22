@@ -5,6 +5,7 @@ import { client } from "../sanity/lib/client";
 import { newsPostsQuery } from "../../lib/queries";
 import { urlFor } from "../sanity/lib/image";
 import { getPageData } from "../../lib/data";
+import { HomePageData } from "../../lib/types";
 
 export const revalidate = 60; // Revalidate this page every 60 seconds
 
@@ -37,7 +38,7 @@ type NewsCard = {
 
 export default async function Home() {
   // Load page data from JSON
-  const pageData = await getPageData('home');
+  const pageData: HomePageData = await getPageData<HomePageData>('home');
   
   // Fetch news posts from Sanity
   const newsPosts = await client.fetch<NewsPost[]>(newsPostsQuery) || [];
